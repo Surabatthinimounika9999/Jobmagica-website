@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-x-hidden selection:bg-primary/30">
+<div class="relative flex flex-col min-h-screen w-full pb-[88px]">
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 bg-slate-200 dark:bg-slate-700" data-alt="Profile picture of the admin user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAL_0J9CvRXX6cKMlvp9Y-EitNIJyQx-DiDdKsnnJqLX0GiUT5oac5o3bszj1wHjXYz7KSapXrTcYnWZ05kX3YGJz1ifr57EKn8dpyxvSZYoYRwRydeQZ7KtbVe3MCYGonZj0tlOpT4mxD_uAJ726HdqwtwM53RBsIKEi7CSU-K_PNsRlfNIvIjrHTlrURbi0TOM1-qj_vpAXmtnl-KvBaavgay2u1HrqgQbhjLh0LoP2W5hbTESdnIVIVqPOc9qbHhNktjHCBwA5M");'>
+</div>
+<div class="absolute bottom-0 right-0 size-2.5 bg-green-500 rounded-full border-2 border-background-light dark:border-background-dark"></div>
+</div>
+<div>
+<h2 class="text-sm font-medium text-slate-500 dark:text-slate-400 leading-none mb-0.5">Welcome back,</h2>
+<h1 class="text-base font-bold text-slate-900 dark:text-white leading-none">Admin</h1>
+</div>
+</div>
+<button class="relative flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full ring-2 ring-background-light dark:ring-background-dark animate-pulse"></span>
+</button>
+</div>
+</header>
+<main class="flex flex-col w-full">
+<div class="px-4 pt-4">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-green-500/10 border border-green-500/20">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<p class="text-sm font-medium text-green-700 dark:text-green-400">All systems operational</p>
+</div>
+</div>
+<section class="mt-6">
+<div class="flex items-center justify-between px-4 mb-3">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">System Health</h2>
+<button class="text-xs font-medium text-primary hover:text-primary/80">View Logs</button>
+</div>
+<div class="flex overflow-x-auto gap-3 px-4 pb-4 no-scrollbar snap-x">
+<div class="flex flex-col min-w-[170px] p-4 rounded-xl bg-white dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 shadow-sm snap-start relative overflow-hidden">
+<div class="flex items-center justify-between mb-1 z-10 relative">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Uptime (24h)</span>
+<div class="size-2 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse"></div>
+</div>
+<div class="flex items-baseline gap-1 mb-4 z-10 relative">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">99.9%</span>
+<span class="text-[10px] font-medium text-green-500">+0.1%</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-16">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 40">
+<defs>
+<linearGradient id="uptimeGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#22c55e" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#22c55e" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path class="fill-[url(#uptimeGradient)]" d="M0,40 L0,28 Q15,35 30,22 T60,25 T100,12 V40 Z"></path>
+<path class="stroke-green-500 fill-none" d="M0,28 Q15,35 30,22 T60,25 T100,12" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+</svg>
+</div>
+</div>
+<div class="flex flex-col min-w-[170px] p-4 rounded-xl bg-white dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 shadow-sm snap-start">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Response Time</span>
+<span class="material-symbols-outlined text-orange-500 text-[16px]">speed</span>
+</div>
+<div class="flex items-baseline gap-1 mb-3">
+<span class="text-2xl font-bold text-slate-900 dark:text-white">24ms</span>
+<span class="text-[10px] font-medium text-slate-400">avg</span>
+</div>
+<div class="flex items-end justify-between h-8 gap-1.5 mt-auto px-1">
+<div class="w-2 bg-orange-100 dark:bg-orange-500/20 rounded-t-sm h-[40%]"></div>
+<div class="w-2 bg-orange-200 dark:bg-orange-500/40 rounded-t-sm h-[65%]"></div>
+<div class="w-2 bg-orange-500 dark:bg-orange-500 rounded-t-sm h-[85%] shadow-sm shadow-orange-500/40"></div>
+<div class="w-2 bg-orange-300 dark:bg-orange-500/60 rounded-t-sm h-[55%]"></div>
+<div class="w-2 bg-orange-100 dark:bg-orange-500/20 rounded-t-sm h-[30%]"></div>
+</div>
+</div>
+<div class="flex flex-col min-w-[170px] p-4 rounded-xl bg-white dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 shadow-sm snap-start">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Server Load</span>
+<span class="material-symbols-outlined text-blue-500 text-[16px]">memory</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div>
+<span class="text-2xl font-bold text-slate-900 dark:text-white">42%</span>
+<p class="text-[10px] text-slate-400 font-medium mt-0.5">4 Cores Active</p>
+</div>
+<div class="relative size-10">
+<svg class="-rotate-90 transform size-10">
+<circle class="text-slate-100 dark:text-slate-700 stroke-current" cx="20" cy="20" fill="transparent" r="16" stroke-width="4"></circle>
+<circle class="text-blue-500 stroke-current" cx="20" cy="20" fill="transparent" r="16" stroke-dasharray="100" stroke-dashoffset="58" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-4 px-4">
+<div class="w-full p-5 rounded-xl bg-orange-50 dark:bg-orange-500/5 border border-orange-100 dark:border-orange-500/20 shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -top-6 size-24 bg-orange-500/5 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="p-1.5 bg-orange-500/10 rounded-lg">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400 text-[20px]">person_add</span>
+</div>
+<h2 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Pending Approvals</h2>
+</div>
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">8</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Recruiters awaiting verification</p>
+</div>
+<button class="flex items-center gap-1 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold rounded-lg shadow-sm shadow-orange-500/20 transition-all active:scale-95">
+<span>Review Now</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-4 pt-3 border-t border-orange-200/50 dark:border-orange-500/10">
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-[#1C2530] flex items-center justify-center text-[9px] font-bold text-slate-600 dark:text-slate-300">JD</div>
+<div class="size-6 rounded-full bg-blue-100 dark:bg-blue-900/30 border-2 border-white dark:border-[#1C2530] flex items-center justify-center text-[9px] font-bold text-blue-600 dark:text-blue-400">AK</div>
+<div class="size-6 rounded-full bg-purple-100 dark:bg-purple-900/30 border-2 border-white dark:border-[#1C2530] flex items-center justify-center text-[9px] font-bold text-purple-600 dark:text-purple-400">ZR</div>
+</div>
+<p class="text-[10px] text-slate-400 font-medium">+5 others joined today</p>
+</div>
+</div>
+</section>
+<section class="mt-6">
+<div class="flex items-center justify-between px-4 mb-3">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">User Analytics</h2>
+<div class="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-md">
+<span>This Week</span>
+<span class="material-symbols-outlined text-[14px]">keyboard_arrow_down</span>
+</div>
+</div>
+<div class="px-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 p-5 rounded-xl bg-primary text-white shadow-lg shadow-primary/20 relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-primary-100 font-medium mb-1">Total Users</p>
+<h3 class="text-3xl font-bold tracking-tight">12,450</h3>
+<div class="flex items-center gap-1 mt-2 text-white/90 text-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+5% from last week</span>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 translate-x-4 translate-y-4">
+<span class="material-symbols-outlined text-[120px]">group</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">New Signups</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white">128</p>
+<p class="text-xs text-green-500 mt-1 font-medium">+12% today</p>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800">
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Active Recruiters</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white">450</p>
+<p class="text-xs text-slate-400 mt-1">Online now</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-6 px-4">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">AI Engine Performance</h2>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-100 dark:border-slate-700">
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Resumes Parsed (Today)</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white mt-1">342</p>
+</div>
+<div class="size-10 rounded-full bg-purple-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-500">description</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Match Accuracy</p>
+<div class="flex items-center gap-2 mt-1">
+<p class="text-xl font-bold text-slate-900 dark:text-white">92%</p>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-500">OPTIMAL</span>
+</div>
+</div>
+<div class="flex items-end gap-1 h-8">
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 h-3 rounded-t"></div>
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 h-5 rounded-t"></div>
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 h-4 rounded-t"></div>
+<div class="w-1.5 bg-primary/40 h-6 rounded-t"></div>
+<div class="w-1.5 bg-primary h-8 rounded-t"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-6 px-4">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Quick Actions</h2>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-50 dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors active:scale-95">
+<div class="size-10 rounded-full bg-blue-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-500">assignment</span>
+</div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Review AI Logs</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-50 dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors active:scale-95">
+<div class="size-10 rounded-full bg-orange-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-500">manage_accounts</span>
+</div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Manage Users</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-50 dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors active:scale-95">
+<div class="size-10 rounded-full bg-purple-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-500">campaign</span>
+</div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Broadcast</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-50 dark:bg-[#1C2530] border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors active:scale-95">
+<div class="size-10 rounded-full bg-slate-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">settings</span>
+</div>
+<span class="text-sm font-medium text-slate-700 dark:text-slate-200">Settings</span>
+</button>
+</div>
+</section>
+<section class="mt-8 px-4 pb-6">
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Recent Activity</h2>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<div class="relative">
+<div class="size-2 bg-red-500 rounded-full mt-1.5"></div>
+<div class="absolute top-3.5 left-1 w-px h-full bg-slate-200 dark:bg-slate-800 -z-10"></div>
+</div>
+<div class="pb-2">
+<p class="text-sm font-medium text-slate-900 dark:text-white">User #1234 banned</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Violation of community guidelines</p>
+<p class="text-[10px] text-slate-400 mt-1">2 mins ago</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="relative">
+<div class="size-2 bg-blue-500 rounded-full mt-1.5"></div>
+<div class="absolute top-3.5 left-1 w-px h-full bg-slate-200 dark:bg-slate-800 -z-10"></div>
+</div>
+<div class="pb-2">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Server patch v2.4 applied</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">System rebooted successfully</p>
+<p class="text-[10px] text-slate-400 mt-1">1 hour ago</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="relative">
+<div class="size-2 bg-green-500 rounded-full mt-1.5"></div>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-900 dark:text-white">New Recruiter Onboarded</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">TechCorp Inc. joined the platform</p>
+<p class="text-[10px] text-slate-400 mt-1">2 hours ago</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 z-50 w-full bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex justify-around items-center h-16 px-2">
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group">
+<span class="material-symbols-outlined filled text-primary text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium text-primary">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-[10px] font-medium">Users</span>
+</button>
+<button class="relative flex flex-col items-center justify-center w-full h-full gap-1 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200">
+<div class="absolute -top-3 size-12 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined text-white text-[24px]">work</span>
+</div>
+<span class="text-[10px] font-medium mt-8">Jobs</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+<span class="text-[10px] font-medium">Reports</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+<div class="h-4 w-full bg-background-light dark:bg-background-dark"></div>
+</nav>
+</div>
+</body></html>

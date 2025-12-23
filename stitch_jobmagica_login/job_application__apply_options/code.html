@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Application: Apply Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1973f0",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101822",
+                "surface-light": "#ffffff",
+                "surface-dark": "#1c2632",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white overflow-hidden h-screen w-full flex flex-col font-display antialiased">
+<!-- Top Navigation -->
+<header class="flex items-center bg-surface-light dark:bg-surface-dark p-4 border-b border-gray-200 dark:border-gray-800 shrink-0 sticky top-0 z-10">
+<div class="flex size-10 shrink-0 items-center justify-center cursor-pointer rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[#111418] dark:text-white" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Apply for Job</h2>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto overflow-x-hidden p-4 pb-24">
+<!-- Job Summary Card -->
+<section class="mb-6">
+<div class="flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-5 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex gap-4 items-start">
+<!-- Company Logo -->
+<div class="w-16 h-16 shrink-0 rounded-lg bg-center bg-cover border border-gray-100 dark:border-gray-700" data-alt="TechFlow Inc company logo minimalist geometric shape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkeMAPziftLMIrGESp2Yv9jExgHmPdvZFWq-cZ9dh1VW2aogzf8kk-QV9hQt_KXgEH5ZT4dKzntes74Lbt91alTHPfZwMKkYxMRjTb8mj5WSqZT4GGfPinzSOpRRMehh4ppEljkPfftKNZJmAckzuFtFDmbK9KoyOMg0_0Hx-FI925CxzmGMdVPgzkMHcgEo0V0xP8_zC_2DEfQ7bxQg3F1DTG9j-cdRR3FyCHfw2wjktDfKfyqu28d1edmVjIKiuEWobZuXzKVwM");'>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Senior UX Designer</h3>
+<p class="text-[#60728a] dark:text-gray-400 text-sm font-medium">TechFlow Inc.</p>
+<div class="flex items-center gap-1 text-[#60728a] dark:text-gray-400 text-xs mt-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">location_on</span>
+<span>San Francisco • $120k - $150k</span>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-1 text-primary text-sm font-medium hover:underline self-start">
+<span>View full description</span>
+<span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+</button>
+</div>
+</section>
+<!-- Auto-Apply Section (Primary) -->
+<section class="mb-6 relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border-2 border-primary/10 shadow-[0_4px_20px_rgba(25,115,240,0.08)] dark:shadow-[0_4px_20px_rgba(25,115,240,0.15)]">
+<!-- Decorative gradient splash -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+<div class="p-5 flex flex-col gap-5">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined filled">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-wider">AI Recommended</span>
+</div>
+<div>
+<h2 class="text-[#111418] dark:text-white tracking-tight text-2xl font-bold leading-tight mb-2">Fast Track with AI</h2>
+<p class="text-[#60728a] dark:text-gray-400 text-sm font-normal leading-relaxed">
+                        Save time! We'll automatically optimize your resume and generate a tailored cover letter based on your profile.
+                    </p>
+</div>
+<!-- Match Score -->
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl p-4 border border-gray-100 dark:border-gray-800">
+<div class="flex gap-6 justify-between mb-2">
+<p class="text-[#111418] dark:text-white text-sm font-semibold">Compatibility Match</p>
+<p class="text-primary text-sm font-bold">95%</p>
+</div>
+<div class="h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 95%;"></div>
+</div>
+<p class="text-[#60728a] dark:text-gray-500 text-xs mt-2">Your skills highly match the requirements.</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 transition-all text-white text-base font-semibold shadow-md active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-size: 20px;">auto_awesome</span>
+<span>Auto-Apply Now</span>
+</button>
+</div>
+</section>
+<!-- Divider -->
+<div class="relative flex py-2 items-center mb-6">
+<div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+<span class="flex-shrink-0 mx-4 text-gray-400 text-xs font-medium uppercase tracking-widest">or</span>
+<div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+<!-- Manual Apply Section (Secondary) -->
+<section class="mb-8">
+<div class="flex flex-col gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-5 border border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">edit_document</span>
+</div>
+<div>
+<h3 class="text-[#111418] dark:text-white text-base font-bold">Standard Application</h3>
+<p class="text-[#60728a] dark:text-gray-400 text-xs">Upload documents and fill forms step-by-step.</p>
+</div>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-transparent border border-gray-300 dark:border-gray-600 text-[#111418] dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    Continue Manually
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Tab Bar) -->
+<nav class="flex items-center justify-around bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 h-[80px] pb-[20px] fixed bottom-0 w-full z-20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center gap-1 p-2 text-primary group" href="#">
+<span class="material-symbols-outlined filled">work</span>
+<span class="text-[10px] font-medium">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-medium">Applications</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[10px] font-medium">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+<!-- Safe area spacing for mobile browsers if needed -->
+<div class="h-5 w-full bg-background-light dark:bg-background-dark hidden"></div>
+<script>
+        // Simple script to handle dark mode toggling for demo purposes if needed
+        // Just ensures classes are set correctly based on system preference initially
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body></html>

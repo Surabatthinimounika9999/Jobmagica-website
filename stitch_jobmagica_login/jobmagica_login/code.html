@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Login</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col justify-between overflow-hidden">
+<!-- Top Spacer for vertical centering -->
+<div class="flex-1"></div>
+<!-- Header Section -->
+<div class="flex flex-col items-center w-full px-6 py-8">
+<div class="flex flex-col gap-6 items-center w-full max-w-md">
+<!-- Logo / Visual -->
+<div class="relative flex items-center justify-center">
+<div class="bg-center bg-no-repeat bg-cover rounded-2xl h-24 w-24 shadow-lg shadow-primary/20" data-alt="Abstract blue glowing digital AI node network" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkZIIvSNXCJ94VPsyOFeFzki8I6BE7Nc5jMQ-7XMUIu1uapjUcObj5iXM4a2zKhHUkPD6vzPAqi_VKHKnJp8eNElkdBcLLE0UGLt2luUUDDfAwJdoy00kXFMeajc6pRjEYlJeAHWalGP4ggMdoQ9EjpFUDUzd23-dp5fJD448lArP2SrpO-V-wZojZrfq7u9Bi8l2t5iBMhaEch133qVgyw4ipTMIDCbugagB6O1wgkQBtZNSXBnC30rm6wEgURp36SzQR36kPUUk");'></div>
+<!-- Overlay Icon for "Magic" feel -->
+<div class="absolute -bottom-2 -right-2 bg-background-dark border-4 border-background-light dark:border-background-dark rounded-full p-1.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl font-bold">auto_awesome</span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col items-center justify-center space-y-3">
+<h1 class="text-3xl font-bold leading-tight tracking-tight text-center text-slate-900 dark:text-white">JobMagica</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-relaxed text-center max-w-[280px]">
+                        Unlock your future with AI-driven recruitment.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Actions Section -->
+<div class="flex flex-col items-center w-full px-6 pb-6 gap-4">
+<!-- Primary Button: Google Sign In -->
+<button class="flex w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary hover:bg-blue-600 transition-colors text-white gap-3 shadow-md shadow-primary/20 group">
+<!-- Using a generic account icon as Material Symbols doesn't have brand logos like Google -->
+<div class="bg-white rounded-full p-1 flex items-center justify-center w-6 h-6">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+<span class="text-base font-bold leading-normal tracking-wide">Sign in with Google</span>
+</button>
+<!-- Divider -->
+<div class="flex items-center gap-3 w-full max-w-[200px] py-2">
+<div class="h-px w-full bg-slate-300 dark:bg-slate-700"></div>
+<span class="text-xs text-slate-400 dark:text-slate-600 font-medium uppercase">or</span>
+<div class="h-px w-full bg-slate-300 dark:bg-slate-700"></div>
+</div>
+<!-- Secondary Button: Email Sign In -->
+<button class="flex w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-transparent border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300 gap-2">
+<span class="material-symbols-outlined text-xl">mail</span>
+<span class="text-sm font-semibold leading-normal">Sign in with Email</span>
+</button>
+</div>
+<!-- Footer / Legal -->
+<div class="flex flex-col items-center w-full px-6 pb-8 pt-2">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-normal leading-relaxed text-center max-w-xs">
+                By signing in, you agree to our <a class="underline hover:text-primary transition-colors" href="#">Terms</a> &amp; <a class="underline hover:text-primary transition-colors" href="#">Privacy Policy</a>.
+            </p>
+</div>
+<!-- Bottom Spacer for vertical centering balance -->
+<div class="flex-1 max-h-8"></div>
+</div>
+</body></html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recruiter Dashboard: Interview Scheduling</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1b2027",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for horizontal scrolling elements */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased overflow-x-hidden selection:bg-primary/30">
+<!-- Mobile Container -->
+<div class="relative flex flex-col min-h-screen w-full max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden pb-24">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<button class="p-2 -ml-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-white">menu</span>
+</button>
+<h1 class="text-base font-bold tracking-tight">Schedule Interview</h1>
+<div class="flex items-center gap-2">
+<button class="p-2 -mr-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-white">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto">
+<!-- Candidate Profile Summary -->
+<div class="p-4">
+<div class="flex items-center gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-slate-200 bg-center bg-cover" data-alt="Professional headshot of a woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD04Z0_tvuTJCZh2YFsdVjOHh_SywPtxcaD96T3mSvdBIyvnyTjuxldKplegq53_pQHLzeZG8M03lNJjObBApdf9RzAjuCkRo4MyYBn_LTRMG-jG88ybt8UoxClKp6diUAJWVflAtUNGAR3rDMIZDgVtkol81tXGRSN934vD5MeMsmFHqblPa17XWQHASz2rPA-l2elpf66Es4VQJesnrD6lV4Rbc1J8dBZBdd6dq6NCLa-C414UBliYPLicirxcVNuCaZNrgiX44A");'></div>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500 border-2 border-white dark:border-surface-dark">
+<span class="material-symbols-outlined text-[10px] text-white font-bold">check</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h2 class="text-base font-bold truncate">Sarah Jenkins</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm truncate">Senior UX Designer</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-primary font-medium">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>92% Match Score</span>
+</div>
+</div>
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400 text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Calendar Section -->
+<div class="flex flex-col gap-2 px-4 pb-2">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">October 2023</h3>
+<div class="flex gap-2">
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Date Scroll -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar py-2 -mx-4 px-4 scroll-smooth">
+<!-- Day Item -->
+<button class="flex flex-col items-center justify-center min-w-[3.5rem] h-16 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shrink-0">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Mon</span>
+<span class="text-lg font-bold">23</span>
+</button>
+<!-- Selected Day Item -->
+<button class="flex flex-col items-center justify-center min-w-[3.5rem] h-16 rounded-xl bg-primary text-white shadow-lg shadow-primary/30 shrink-0 transform scale-105">
+<span class="text-xs font-medium text-blue-100">Tue</span>
+<span class="text-lg font-bold">24</span>
+<span class="h-1 w-1 rounded-full bg-white mt-1"></span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[3.5rem] h-16 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shrink-0">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Wed</span>
+<span class="text-lg font-bold">25</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[3.5rem] h-16 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shrink-0 relative overflow-hidden">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Thu</span>
+<span class="text-lg font-bold">26</span>
+<!-- Notification dot for availability -->
+<span class="absolute top-2 right-2 h-1.5 w-1.5 rounded-full bg-green-500"></span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[3.5rem] h-16 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shrink-0">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Fri</span>
+<span class="text-lg font-bold">27</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[3.5rem] h-16 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shrink-0 opacity-50">
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Sat</span>
+<span class="text-lg font-bold">28</span>
+</button>
+</div>
+</div>
+<!-- Chips / Filters -->
+<div class="px-4 py-2">
+<div class="flex gap-2 overflow-x-auto no-scrollbar">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-light dark:bg-surface-dark border border-primary text-primary text-sm font-medium whitespace-nowrap">
+<span>All Slots</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium whitespace-nowrap">
+<span class="material-symbols-outlined text-base">favorite</span>
+<span>Candidate Preferred</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm font-medium whitespace-nowrap">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>AI Suggested</span>
+</button>
+</div>
+</div>
+<!-- Time Slots List -->
+<div class="p-4 space-y-3">
+<h3 class="text-lg font-bold">Available Times</h3>
+<!-- Time Slot: Regular -->
+<div class="group flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined text-slate-500">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-base">09:00 AM - 09:30 AM</span>
+<span class="text-xs text-slate-500">30 min</span>
+</div>
+</div>
+<div class="h-5 w-5 rounded-full border-2 border-slate-300 dark:border-slate-600 group-hover:border-primary"></div>
+</div>
+<!-- Time Slot: AI Suggested & Preferred -->
+<div class="relative group flex items-center justify-between p-3 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary transition-all cursor-pointer">
+<!-- Badge -->
+<div class="absolute -top-2.5 left-4 px-2 py-0.5 rounded bg-primary text-[10px] font-bold text-white uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">auto_awesome</span>
+                        Best Match
+                    </div>
+<div class="flex items-center gap-4">
+<div class="p-2 bg-primary/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-base text-primary dark:text-white">10:00 AM - 10:45 AM</span>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500">45 min</span>
+<span class="text-xs font-medium text-green-600 dark:text-green-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                                    Candidate Preferred
+                                </span>
+</div>
+</div>
+</div>
+<div class="h-5 w-5 rounded-full border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm font-bold">check</span>
+</div>
+</div>
+<!-- Time Slot: Regular -->
+<div class="group flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer opacity-60">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined text-slate-500">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-base line-through text-slate-400">11:00 AM - 11:30 AM</span>
+<span class="text-xs text-slate-500">Recruiter Conflict</span>
+</div>
+</div>
+</div>
+<!-- Time Slot: Regular -->
+<div class="group flex items-center justify-between p-3 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 hover:border-primary transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<span class="material-symbols-outlined text-slate-500">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-semibold text-base">01:00 PM - 01:30 PM</span>
+<span class="text-xs text-slate-500">30 min</span>
+</div>
+</div>
+<div class="h-5 w-5 rounded-full border-2 border-slate-300 dark:border-slate-600 group-hover:border-primary"></div>
+</div>
+</div>
+<!-- Interview Details Form -->
+<div class="px-4 pt-2 pb-8 space-y-4">
+<h3 class="text-lg font-bold">Interview Details</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-slate-500 dark:text-slate-400 mb-1.5">Interview Type</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary text-primary font-medium">
+<span class="material-symbols-outlined text-lg">videocam</span>
+                                Video Call
+                            </button>
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-medium">
+<span class="material-symbols-outlined text-lg">apartment</span>
+                                In-Person
+                            </button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-500 dark:text-slate-400 mb-1.5">Location / Link</label>
+<div class="relative">
+<input class="w-full pl-10 pr-4 py-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none" readonly="" type="text" value="https://meet.google.com/abc-defg-hij"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400">link</span>
+<button class="absolute right-3 top-2.5 text-xs font-semibold text-primary hover:text-blue-400">COPY</button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-500 dark:text-slate-400 mb-1.5">Notes for Candidate</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none" placeholder="Add any specific instructions or agenda..." rows="3"></textarea>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 max-w-md mx-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-primary/25 transition-all active:scale-[0.98]">
+<span>Confirm &amp; Send Invite</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</div>
+</body></html>

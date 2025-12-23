@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Admin - User Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111418", // Matches snippet base color
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#282f39", // Matches snippet surface color
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#9ca8ba",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between bg-background-light dark:bg-background-dark p-4 pb-2 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<button class="text-gray-900 dark:text-white flex items-center justify-center p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">User Management</h2>
+</div>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary text-white hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</header>
+<!-- Search Area -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark sticky top-[60px] z-10">
+<label class="flex flex-col h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex border-none bg-white dark:bg-surface-dark items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-surface-dark focus:border-none h-full placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search users by name, email..." value=""/>
+</div>
+</label>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar items-center bg-background-light dark:bg-background-dark">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-900 dark:bg-white px-4 transition-colors">
+<p class="text-white dark:text-gray-900 text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Pending</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Recruiters</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Seekers</p>
+</button>
+</div>
+<!-- User List -->
+<div class="flex flex-col gap-3 px-4 pb-4">
+<!-- User Card 1: Pending Recruiter -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-start gap-3 mb-3">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrnD-aJ1388v9qAobizyJXQ5cF6e9iquO1CZCXp8ZMXbIjMK0hgoKVQAmfgG2FUfpRSqRpGROpd3U9eofKDyZaO-vNeCuf-2Ke9k6WZqlSLV_qUSVQjkY0B0bS5BGYQmilthTtvimIy0MpFXgxDz3VWvwh59_BT3sX9FTA-y6Ya-KrrECqt2IUviN-e6tGkAdD7Icv0bPpBDJtQPNb_s96Dkhs90NwhV0rXR4w488xMmRYMTock4WV8aUD0jgokOXuIg-W2ZTEus4");'></div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight">Sarah Jenkins</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal">sarah.j@example.com</p>
+</div>
+</div>
+<button class="text-text-secondary-light dark:text-text-secondary-dark p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="inline-flex items-center rounded-md bg-purple-50 dark:bg-purple-900/30 px-2 py-1 text-xs font-medium text-purple-700 dark:text-purple-300 ring-1 ring-inset ring-purple-700/10">Recruiter</span>
+<span class="inline-flex items-center rounded-md bg-yellow-50 dark:bg-yellow-900/30 px-2 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-400 ring-1 ring-inset ring-yellow-600/20">Pending Approval</span>
+</div>
+<div class="flex gap-2 mt-auto">
+<button class="flex-1 flex items-center justify-center rounded-lg h-9 bg-primary text-white text-sm font-medium hover:bg-blue-600 transition-colors">
+                        Approve
+                    </button>
+<button class="flex items-center justify-center rounded-lg h-9 w-9 border border-gray-200 dark:border-gray-600 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+</button>
+</div>
+</div>
+<!-- User Card 2: Active Seeker -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-start gap-3 mb-3">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Michael Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDMNqrro7LTmIsxTlNeX4b-SXJARXo6_HjMaTFJnk_6qhPFUYWakiTZ5IXmzAV4nXCpZhhOIj7AD310tjTk2XRzCz4VUV_n-MXouX9h1uEn9VzUd6T1WYqfzcWWcZNv7qpi3DEUwrU1rL91OZxjPcoiEUXIfJaRelb59WKMCwyYCR9I2zahFHbLhIF_wLibljPCcnZrpTCmvosWYryXo8493ahgbVcPrcp5PQGdAc-EjAD4dPkB38q4EfZBJrfXGE_CZh3rhO7nA0");'></div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight">Michael Chen</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal">michael.c@example.com</p>
+</div>
+</div>
+<button class="text-text-secondary-light dark:text-text-secondary-dark p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">Job Seeker</span>
+<span class="inline-flex items-center rounded-md bg-green-50 dark:bg-green-900/30 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 ring-1 ring-inset ring-green-600/20">Active</span>
+</div>
+</div>
+<!-- User Card 3: Active Recruiter -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-start gap-3 mb-3">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Emily Davis" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCF94s-jNxFeEErfUra3YxGOQv93x2g71hc1YmqV1Qj1bQh6Cc75QEUQ8fiTDyShZHhDwVJOlGKCstf_DjC_DZYI7PVc2NPzD8NOwu8YK6jr5tH3Bjo-k1Mc4gh31WLbXAegahAGaX2xZUGHDxonPwW_8E-1DPsQ3aSOgo-WMehLbRJXFYtII-O-rc5WghMYKhYmp-r3P7x8BD8UPulIryO2Ru0UubfIXnk_QPpC7VwTyfJxb07QUZwdVYdCQis0lrGSkaIdZ6t9t8");'></div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight">Emily Davis</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal">emily.d@techcorp.com</p>
+</div>
+</div>
+<button class="text-text-secondary-light dark:text-text-secondary-dark p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-purple-50 dark:bg-purple-900/30 px-2 py-1 text-xs font-medium text-purple-700 dark:text-purple-300 ring-1 ring-inset ring-purple-700/10">Recruiter</span>
+<span class="inline-flex items-center rounded-md bg-green-50 dark:bg-green-900/30 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 ring-1 ring-inset ring-green-600/20">Active</span>
+</div>
+</div>
+<!-- User Card 4: Blocked User -->
+<div class="flex flex-col bg-white dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-gray-800 opacity-75">
+<div class="flex justify-between items-start gap-3 mb-3">
+<div class="flex items-start gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 grayscale" data-alt="Portrait of James Wilson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABXMs1uvl6_ws02dPc-CKHr8N1gopQNT3uImB1GzyFYoWIAHlWZG-xGcKMziFV1yBvPKxIw7fllcIUKyVyFF1YCtzXmkR4iIwVmPdcLJ2UMw-nRiFgKpGWrr1-WMO5mr3-plX_ISTZmqWZCNNGnRPxsc9wRukqNiFXHNVuf6FhrwAyFRwJZotPUgCiQKTkKzhMlBThWPFfU3Ux9D9AY0rhkLhmnT5DOiauGvMdFblslDvlDzb916BRwPELA1eY1vmkIJ7kn2GIz7s");'></div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-semibold leading-tight line-through decoration-red-500/50">James Wilson</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal">james.w@example.com</p>
+</div>
+</div>
+<button class="text-text-secondary-light dark:text-text-secondary-dark p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">Job Seeker</span>
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/30 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300 ring-1 ring-inset ring-red-600/20">Blocked</span>
+</div>
+<button class="text-xs font-medium text-primary hover:text-blue-400">Unblock</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full bg-white dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-4 z-30">
+<div class="flex justify-around items-center h-14">
+<a class="flex flex-col items-center gap-1 w-16 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 text-primary" href="#">
+<span class="material-symbols-outlined fill-current">group</span>
+<span class="text-[10px] font-medium">Users</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-medium">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+<!-- Safe area spacer for iOS home indicator -->
+<div class="h-4 w-full"></div>
+</nav>
+</div>
+</body></html>

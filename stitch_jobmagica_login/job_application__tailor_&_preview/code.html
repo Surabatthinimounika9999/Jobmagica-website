@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Application: Tailor &amp; Preview</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 border-b border-gray-200 dark:border-gray-800 justify-between">
+<div class="text-gray-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Review Application</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="text-gray-500 dark:text-[#9ca8ba] text-sm font-semibold leading-normal tracking-[0.015em] shrink-0 hover:text-gray-900 dark:hover:text-white transition">Cancel</button>
+</div>
+</div>
+<!-- Page Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-2 py-4">
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-[#3b4554]"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-[#3b4554]"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary"></div>
+</div>
+<!-- Job Context Card -->
+<div class="px-4 pb-4">
+<div class="relative overflow-hidden rounded-xl bg-cover bg-center shadow-lg" data-alt="Modern office interior looking out over a city skyline at dusk" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8lwXMq_aMy9SzQ8BZLYJp4kD4prXoVBqTK3fUmEOnFO2zGeuTNX0-wAu7GTijhkb-4kc5aftb9YR3icYWUYigPyh2HVBDjo53J3jZvw_rYLojxuhFuKdAUQOYW_Yx5W9u2rYzayxvKTheNGivnPNWkXgcieoSNxMlLb2G2yFpIPraksOyKiX5JP_GeJpr2fBD7EF_N5xYkua_Nm9OTaN4njAvnh5H2KYVCYXgSGL9b0IOcVZvw87tKjvVY4faPdUOIlW-w90UqbU");'>
+<div class="flex flex-col gap-1 p-5 pt-20">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-white/20 backdrop-blur-md text-white text-xs font-medium px-2 py-0.5 rounded">Full-time</span>
+<span class="bg-white/20 backdrop-blur-md text-white text-xs font-medium px-2 py-0.5 rounded">Remote</span>
+</div>
+<h3 class="text-white text-2xl font-bold leading-tight">Senior Product Designer</h3>
+<p class="text-gray-200 text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">apartment</span> TechFlow Inc.
+                        <span class="mx-1">•</span>
+<span class="material-symbols-outlined text-[16px]">location_on</span> San Francisco, CA
+                    </p>
+</div>
+</div>
+</div>
+<!-- Match Score Section -->
+<div class="px-4 py-2">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">AI Match Score</h3>
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-white dark:bg-[#1C222C] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-3xl font-bold text-gray-900 dark:text-white">92%</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Match Probability</span>
+</div>
+<div class="flex items-center gap-1 text-green-500 text-sm font-medium bg-green-500/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+<span>High Match</span>
+</div>
+</div>
+<div class="rounded-full h-2.5 w-full bg-gray-200 dark:bg-[#3b4554] overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 92%;"></div>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<p class="text-gray-500 dark:text-[#9ca8ba] text-sm font-normal leading-normal">
+                        Your resume strongly aligns with the job requirements.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="inline-flex items-center gap-1 rounded bg-primary/10 dark:bg-primary/20 px-2 py-1 text-xs font-medium text-primary dark:text-blue-300">
+<span class="material-symbols-outlined text-[14px]">check</span> Design Systems
+                        </span>
+<span class="inline-flex items-center gap-1 rounded bg-primary/10 dark:bg-primary/20 px-2 py-1 text-xs font-medium text-primary dark:text-blue-300">
+<span class="material-symbols-outlined text-[14px]">check</span> Prototyping
+                        </span>
+<span class="inline-flex items-center gap-1 rounded bg-primary/10 dark:bg-primary/20 px-2 py-1 text-xs font-medium text-primary dark:text-blue-300">
+<span class="material-symbols-outlined text-[14px]">check</span> User Research
+                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Resume Tailoring Preview -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between pb-3">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Tailored Resume</h3>
+<button class="text-primary text-sm font-semibold">View Full PDF</button>
+</div>
+<div class="rounded-xl bg-white dark:bg-[#1C222C] border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="bg-gray-50 dark:bg-[#252b36] px-4 py-3 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Optimization Preview</span>
+<span class="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">Automated</span>
+</div>
+<div class="p-4 space-y-4">
+<!-- Section 1 -->
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white mb-1">Professional Summary</h4>
+<p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Senior UX Designer with 6+ years of experience leading <span class="bg-primary/20 text-primary dark:text-blue-300 font-semibold px-1 rounded">SaaS product design</span>. Proven ability to scale <span class="bg-primary/20 text-primary dark:text-blue-300 font-semibold px-1 rounded">design systems</span> and improve user retention by 40%.
+                        </p>
+</div>
+<!-- Section 2 -->
+<div>
+<h4 class="text-sm font-bold text-gray-900 dark:text-white mb-1">Key Experience</h4>
+<ul class="list-disc pl-4 text-sm text-gray-600 dark:text-gray-300 space-y-1">
+<li>Spearheaded the redesign of core mobile workflows using <span class="bg-primary/20 text-primary dark:text-blue-300 font-semibold px-1 rounded">Figma</span> variables.</li>
+<li>Collaborated with engineering to implement accessible components.</li>
+</ul>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#252b36] p-3 text-center cursor-pointer hover:bg-gray-100 dark:hover:bg-[#2f3642] transition border-t border-gray-100 dark:border-gray-800">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit Resume
+                     </span>
+</div>
+</div>
+</div>
+<!-- AI Email Preview -->
+<div class="px-4 py-2">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Cover Letter / Email</h3>
+<!-- Tone & Length Controls -->
+<div class="flex flex-col gap-3 mb-3">
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 shrink-0">Tone:</span>
+<button class="px-3 py-1.5 rounded-full bg-primary text-white text-xs font-medium shadow-sm transition">Professional</button>
+<button class="px-3 py-1.5 rounded-full bg-gray-200 dark:bg-[#3b4554] text-gray-600 dark:text-gray-300 text-xs font-medium hover:bg-gray-300 dark:hover:bg-[#4b5563] transition">Enthusiastic</button>
+<button class="px-3 py-1.5 rounded-full bg-gray-200 dark:bg-[#3b4554] text-gray-600 dark:text-gray-300 text-xs font-medium hover:bg-gray-300 dark:hover:bg-[#4b5563] transition">Confident</button>
+</div>
+<div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1">
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 shrink-0">Length:</span>
+<button class="px-3 py-1.5 rounded-full bg-gray-200 dark:bg-[#3b4554] text-gray-600 dark:text-gray-300 text-xs font-medium hover:bg-gray-300 dark:hover:bg-[#4b5563] transition">Concise</button>
+<button class="px-3 py-1.5 rounded-full bg-primary text-white text-xs font-medium shadow-sm transition">Detailed</button>
+</div>
+</div>
+<!-- Email Content -->
+<div class="rounded-xl bg-white dark:bg-[#1C222C] border border-gray-100 dark:border-gray-800 shadow-sm p-4 relative group">
+<div class="absolute top-4 right-4 opacity-50 hover:opacity-100 transition cursor-pointer">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">refresh</span>
+</div>
+<div class="border-b border-gray-100 dark:border-gray-800 pb-3 mb-3">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Subject</p>
+<p class="text-sm font-medium text-gray-900 dark:text-white">Application for Senior Product Designer - [Your Name]</p>
+</div>
+<div class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed space-y-3">
+<p>Dear Hiring Team,</p>
+<p>I am writing to express my strong interest in the Senior Product Designer role at TechFlow. With my background in building scalable design systems and my passion for data-driven UX decisions, I believe I can make an immediate impact on your product team.</p>
+<p>My experience aligning perfectly with TechFlow's mission to simplify complex workflows...</p>
+<p>Best regards,<br/>[Your Name]</p>
+</div>
+<div class="mt-4 flex justify-end">
+<button class="flex items-center gap-1.5 text-primary text-sm font-medium hover:text-blue-400 transition">
+<span class="material-symbols-outlined text-[18px]">edit_note</span> Customize
+                    </button>
+</div>
+</div>
+</div>
+<div class="h-8"></div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 p-4 pb-8">
+<div class="mx-auto w-full max-w-md flex flex-col gap-3">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3.5 px-4 text-center text-white font-bold text-base shadow-lg shadow-primary/20 hover:bg-blue-600 active:scale-[0.98] transition">
+<span>Approve &amp; Send Application</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<button class="w-full text-center text-gray-500 dark:text-gray-400 text-sm font-medium hover:text-gray-900 dark:hover:text-white transition">
+                Save Draft &amp; Exit
+            </button>
+</div>
+</div>
+</body></html>

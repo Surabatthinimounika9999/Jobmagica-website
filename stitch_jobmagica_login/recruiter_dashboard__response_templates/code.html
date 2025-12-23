@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recruiter Dashboard: Response Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1C242F",
+                        "surface-highlight": "#2A3441",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom utilities for scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary/30">
+<!-- Mobile Viewport Wrapper -->
+<div class="relative flex min-h-screen flex-col overflow-hidden pb-20">
+<!-- Top Navigation / Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 py-3 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<button class="flex items-center justify-center p-2 -ml-2 text-slate-600 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight truncate flex-1 text-center pr-8">Response Templates</h1>
+<button class="flex items-center justify-center p-2 -mr-2 text-slate-600 dark:text-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Search & Filter Area -->
+<div class="px-4 py-3 space-y-3">
+<!-- Search Input -->
+<label class="relative block">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="block w-full p-3 pl-10 text-sm rounded-xl border-none bg-surface-light dark:bg-surface-dark placeholder-gray-400 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary shadow-sm" placeholder="Search templates (e.g. 'Rejection')..." type="text"/>
+</label>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="shrink-0 rounded-lg bg-primary text-white px-4 py-1.5 text-sm font-medium shadow-sm shadow-primary/20 transition-colors">All</button>
+<button class="shrink-0 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-surface-highlight transition-colors">Interview</button>
+<button class="shrink-0 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-surface-highlight transition-colors">Rejection</button>
+<button class="shrink-0 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-surface-highlight transition-colors">Offer</button>
+<button class="shrink-0 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 px-4 py-1.5 text-sm font-medium text-slate-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-surface-highlight transition-colors">Sourcing</button>
+</div>
+</div>
+<!-- AI Suggestion Banner -->
+<div class="px-4 py-2">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-indigo-600 p-5 shadow-lg shadow-blue-900/20">
+<!-- Abstract decorative shapes -->
+<div class="absolute right-0 top-0 -mr-6 -mt-6 h-32 w-32 rounded-full bg-white/10 blur-2xl"></div>
+<div class="absolute bottom-0 left-0 -mb-6 -ml-6 h-24 w-24 rounded-full bg-black/20 blur-xl"></div>
+<div class="relative flex items-center justify-between z-10">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="material-symbols-outlined text-yellow-300 text-[18px]">colors_spark</span>
+<span class="text-xs font-bold uppercase tracking-wider text-blue-100">AI Assistant</span>
+</div>
+<h3 class="text-white font-bold text-lg leading-tight">Create smart replies</h3>
+<p class="text-blue-100 text-sm mt-1 max-w-[200px]">Draft personalized templates instantly with JobMagica AI.</p>
+</div>
+<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur-md hover:bg-white/30 active:scale-95 transition-all border border-white/10">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Saved Templates List -->
+<div class="flex-1 px-4 py-2 space-y-4">
+<div class="flex items-center justify-between pt-2">
+<h2 class="text-base font-bold text-slate-800 dark:text-white">Saved Templates</h2>
+<span class="px-2 py-0.5 rounded bg-gray-200 dark:bg-gray-800 text-xs font-semibold text-slate-600 dark:text-gray-400">12 Total</span>
+</div>
+<!-- Template Card 1 (Interview) -->
+<div class="group relative rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm border border-transparent dark:border-gray-800 active:scale-[0.99] transition-all hover:border-primary/50">
+<div class="flex items-start justify-between gap-4">
+<div class="flex gap-3 overflow-hidden">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/30 text-primary">
+<span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-slate-900 dark:text-white leading-tight truncate">First Round Invite</h3>
+<p class="mt-1 line-clamp-2 text-sm text-slate-500 dark:text-gray-400 leading-relaxed">
+                                Hi [Name], we are impressed by your background and would like to invite you to a first round discussion...
+                            </p>
+</div>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                            Used 24 times
+                        </span>
+<span class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            2d ago
+                        </span>
+</div>
+</div>
+</div>
+<!-- Template Card 2 (Rejection) -->
+<div class="group relative rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm border border-transparent dark:border-gray-800 active:scale-[0.99] transition-all hover:border-primary/50">
+<div class="flex items-start justify-between gap-4">
+<div class="flex gap-3 overflow-hidden">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-50 dark:bg-red-900/30 text-red-500">
+<span class="material-symbols-outlined text-[20px]">do_not_disturb_on</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-semibold text-slate-900 dark:text-white leading-tight truncate">Polite Rejection</h3>
+<p class="mt-1 line-clamp-2 text-sm text-slate-500 dark:text-gray-400 leading-relaxed">
+                                Thank you for applying to JobMagica. While your skills are impressive, we decided to move forward with other...
+                            </p>
+</div>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                            Used 156 times
+                        </span>
+<span class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            1w ago
+                        </span>
+</div>
+</div>
+</div>
+<!-- Template Card 3 (Offer) -->
+<div class="group relative rounded-xl bg-white dark:bg-surface-dark p-4 shadow-sm border border-transparent dark:border-gray-800 active:scale-[0.99] transition-all hover:border-primary/50">
+<div class="flex items-start justify-between gap-4">
+<div class="flex gap-3 overflow-hidden">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-50 dark:bg-green-900/30 text-green-500">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-slate-900 dark:text-white leading-tight truncate">Offer Letter Standard</h3>
+<span class="flex items-center justify-center rounded bg-indigo-100 dark:bg-indigo-900/50 px-1.5 py-0.5 text-[10px] font-bold text-indigo-600 dark:text-indigo-300">AI</span>
+</div>
+<p class="mt-1 line-clamp-2 text-sm text-slate-500 dark:text-gray-400 leading-relaxed">
+                                Congratulations! We are pleased to offer you the position of [Role] at JobMagica. Please find attached...
+                            </p>
+</div>
+</div>
+<button class="h-8 w-8 flex items-center justify-center rounded-full text-gray-400 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
+<div class="flex gap-4">
+<span class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                            Used 5 times
+                        </span>
+<span class="flex items-center gap-1 text-xs text-slate-500 dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                            5h ago
+                        </span>
+</div>
+</div>
+</div>
+<!-- Bottom Spacer -->
+<div class="h-10"></div>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-4 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-xl shadow-primary/30 hover:bg-blue-600 hover:scale-105 active:scale-95 transition-all focus:outline-none focus:ring-4 focus:ring-blue-300">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 z-40 w-full border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark pb-1">
+<div class="flex h-16 items-center justify-around px-2">
+<a class="group flex flex-col items-center gap-1 p-2 w-16 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">work</span>
+<span class="text-[10px] font-medium">Jobs</span>
+</a>
+<a class="group flex flex-col items-center gap-1 p-2 w-16 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">group</span>
+<span class="text-[10px] font-medium">People</span>
+</a>
+<a class="group flex flex-col items-center gap-1 p-2 w-16 text-primary" href="#">
+<span class="material-symbols-outlined filled group-active:scale-90 transition-transform">description</span>
+<span class="text-[10px] font-medium">Templates</span>
+</a>
+<a class="group flex flex-col items-center gap-1 p-2 w-16 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<div class="relative">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">chat</span>
+<span class="absolute top-0 right-0 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-white dark:border-background-dark"></span>
+</div>
+<span class="text-[10px] font-medium">Chat</span>
+</a>
+<a class="group flex flex-col items-center gap-1 p-2 w-16 text-slate-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+<!-- iOS Home Indicator Safe Area -->
+<div class="h-2 w-full bg-white dark:bg-background-dark"></div>
+</nav>
+</div>
+</body></html>

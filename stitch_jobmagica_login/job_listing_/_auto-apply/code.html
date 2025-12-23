@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Listing - JobMagica</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1a222d",
+                        "surface-highlight": "#252e3a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden antialiased selection:bg-primary selection:text-white pb-[180px]">
+<!-- Top Navigation / Header -->
+<header class="sticky top-0 z-30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+<div class="flex items-center justify-between p-4 h-16">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="text-base font-bold leading-tight tracking-tight opacity-0 sm:opacity-100 transition-opacity">Job Details</h1>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">ios_share</span>
+</button>
+</div>
+</header>
+<!-- Context Banner -->
+<div class="bg-surface-dark w-full border-b border-gray-800/50">
+<p class="text-[#9ca8ba] text-xs font-medium leading-normal py-2 px-4 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">mail</span>
+            From Job Alert: TechFlow
+        </p>
+</div>
+<!-- Main Content Area -->
+<main class="flex flex-col gap-6 p-4 md:p-6 max-w-lg mx-auto w-full">
+<!-- Job Header Card -->
+<section class="flex flex-col items-center gap-5">
+<div class="relative group">
+<div class="bg-center bg-no-repeat bg-cover rounded-2xl size-24 shadow-lg ring-4 ring-surface-dark" data-alt="Abstract geometric logo representing a tech company in blue and purple gradients" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsn_qk77ivky1cp0mv-Vs0geNka3dm-vgeaX7y8-0f36kAw6O48bhQ1qXlBYq6eQibOpVgsO1-_MrghJKGVTlMKXMtttg8fb8fx1lKuYWzevADU8lJzQUtZCFs5j_nh4NXRhnGcZhSAuYmG55Q_SzDREkg20ADx-As97cQ40GuAySrf2c4tr-FJrQoG-WbjDlAB4eK7qzD_i8HMbm_UaOx-X9bZV2igdT2SK8_pdtGr3fxlhGE8V8QCGw8_V6jlika_0a-rCTgoZ0");'>
+</div>
+<div aria-label="Online status" class="absolute -bottom-2 -right-2 bg-green-500 size-5 rounded-full border-4 border-background-dark"></div>
+</div>
+<div class="flex flex-col items-center justify-center gap-1 text-center">
+<h2 class="text-2xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Senior Product Designer</h2>
+<div class="flex items-center gap-1.5 text-[#9ca8ba]">
+<span class="text-sm font-medium">TechFlow Solutions</span>
+<span class="text-[10px]">•</span>
+<span class="text-sm font-medium">San Francisco, CA</span>
+</div>
+<!-- Match Score Badge -->
+<div class="mt-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/30">
+<span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+<span class="text-primary text-sm font-bold">92% Match with your Resume</span>
+</div>
+</div>
+</section>
+<!-- Quick Stats / Chips -->
+<section class="w-full overflow-x-auto no-scrollbar">
+<div class="flex gap-3 pb-2">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 px-3 shadow-sm">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">public</span>
+<span class="text-slate-700 dark:text-gray-300 text-sm font-medium">Remote</span>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 px-3 shadow-sm">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">payments</span>
+<span class="text-slate-700 dark:text-gray-300 text-sm font-medium">$120k - $150k</span>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 px-3 shadow-sm">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">schedule</span>
+<span class="text-slate-700 dark:text-gray-300 text-sm font-medium">Full-time</span>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-800 px-3 shadow-sm">
+<span class="material-symbols-outlined text-gray-500 text-[20px]">work_history</span>
+<span class="text-slate-700 dark:text-gray-300 text-sm font-medium">Senior Level</span>
+</div>
+</div>
+</section>
+<!-- About Job -->
+<section class="flex flex-col gap-3">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-white">About the role</h3>
+<div class="bg-white dark:bg-surface-dark rounded-xl p-4 border border-gray-200 dark:border-gray-800 shadow-sm">
+<p class="text-slate-600 dark:text-gray-300 text-base font-normal leading-relaxed">
+                    We are looking for a creative designer to lead our mobile initiatives. You will work closely with our product and engineering teams to build world-class user experiences. The ideal candidate has a strong portfolio showcasing mobile design patterns...
+                </p>
+<button class="mt-2 text-primary text-sm font-semibold flex items-center gap-1 hover:underline">
+                    Read More 
+                    <span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Key Skills -->
+<section class="flex flex-col gap-3">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-white">Key Skills</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-md bg-surface-highlight text-gray-300 text-sm font-medium">Figma</span>
+<span class="px-3 py-1.5 rounded-md bg-surface-highlight text-gray-300 text-sm font-medium">iOS Design</span>
+<span class="px-3 py-1.5 rounded-md bg-surface-highlight text-gray-300 text-sm font-medium">Prototyping</span>
+<span class="px-3 py-1.5 rounded-md bg-surface-highlight text-gray-300 text-sm font-medium">Design Systems</span>
+<span class="px-3 py-1.5 rounded-md bg-surface-highlight text-gray-300 text-sm font-medium">User Research</span>
+</div>
+</section>
+<!-- Location Map Preview -->
+<section class="flex flex-col gap-3 mb-4">
+<h3 class="text-lg font-semibold text-slate-900 dark:text-white">Location</h3>
+<div class="relative w-full h-32 rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-100 transition-opacity" data-alt="Map view showing streets of San Francisco" data-location="San Francisco" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2iOsfn_5YI7I7PsMtPC28cRFm_wp4vBuOeh1FF5Pdb3ss-r73PNykomKB1RRTjuMXLpH0Fif4lH_YnHw3vG50tnXjaDsGLereGCBK53zJ_gUVnIUsWBGRY5vClp63sj2yJ_fNWFKLj00eBu0gwsB8I_UX-M4ix77yRqjSeurdFgUsfPQ8Fb3mFmMRXCm5EFQkf0O4O_o1n_CxfurgLNB5BUEX-u3G4OqZOgTxHbc37dYL8Rx8cwuV08Y1jcvbzYdeg8HQ3cLVMl4");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="text-sm font-medium">San Francisco, CA (Hybrid)</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Action Area -->
+<div class="fixed bottom-[80px] left-0 w-full z-40">
+<!-- Gradient fade for smooth transition -->
+<div class="absolute bottom-[-20px] left-0 w-full h-24 bg-gradient-to-t from-background-dark via-background-dark to-transparent pointer-events-none"></div>
+<div class="relative px-4 pb-4 pt-2 max-w-lg mx-auto flex flex-col gap-3">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl h-14 bg-primary hover:bg-blue-600 text-white font-bold text-lg shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined icon-filled">auto_awesome</span>
+                Auto-Apply with AI
+            </button>
+<p class="text-center text-xs text-gray-400 font-medium">We'll customize your resume automatically ✨</p>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl h-12 bg-transparent border border-gray-600 text-white font-semibold text-base hover:bg-surface-dark transition-all">
+                Manual Application
+            </button>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 z-50 w-full h-[80px] bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 flex items-start justify-around pt-3 pb-safe">
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">work</span>
+<span class="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Jobs</span>
+</a>
+<div class="w-16"></div> <!-- Spacer for aesthetic if needed, or keeping standard 4 items -->
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">Profile</span>
+</a>
+</nav>
+</body></html>

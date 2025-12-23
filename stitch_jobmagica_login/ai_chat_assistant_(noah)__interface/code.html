@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noah - AI Chat Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#111418] border-b border-gray-200 dark:border-gray-800 shrink-0 z-20">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-slate-900 dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-2">
+<span class="text-base font-bold tracking-tight">Noah</span>
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+</span>
+</div>
+<span class="text-[11px] text-gray-500 dark:text-gray-400 font-medium">AI Recruiter</span>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-slate-900 dark:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</header>
+<!-- Main Chat Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar p-4 flex flex-col gap-6 pb-40">
+<!-- Timestamp -->
+<div class="flex justify-center">
+<span class="text-xs font-medium text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">Today, 9:41 AM</span>
+</div>
+<!-- AI Message 1 -->
+<div class="flex items-end gap-3 group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0 border border-gray-200 dark:border-gray-700 shadow-sm" data-alt="Noah AI Avatar, a friendly robot face" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9VwzlAwBOkxsFlrmABc5qN8WN6DYhlmjwxln10DUSxX3kIhlFv_-itipCQH_bXKX2aSlz0KJnKzGfjbpq2VnJOArkXlVUbbSrfdux1Fxxo7F6hkEMW8Uq4tPpNO6dZYHN45p6kjjmLmrlOzuopjtjfOr81fnuNy73wXcss8vCStlOowe8MpNlNleUYDeXuK2focNca13FKCn6X-_PHwzhfLSrQ46AunCiDp2X_8oOIhVmjpIe6incM5otCs1FDtMW7ZbS89ReZR0");'></div>
+<div class="flex flex-col gap-1 max-w-[85%]">
+<span class="text-[#9ca8ba] text-[11px] ml-1">Noah</span>
+<div class="p-4 bg-white dark:bg-[#282f39] text-slate-800 dark:text-white rounded-2xl rounded-tl-none shadow-sm text-[15px] leading-relaxed">
+                    Hello! I found 3 new UX Designer roles that match your persona. Would you like to see them?
+                </div>
+</div>
+</div>
+<!-- User Message 1 -->
+<div class="flex items-end gap-3 justify-end group">
+<div class="flex flex-col gap-1 items-end max-w-[85%]">
+<div class="px-4 py-3 bg-primary text-white rounded-2xl rounded-tr-none shadow-sm text-[15px] leading-relaxed">
+                    Yes, please show me the high-paying ones.
+                </div>
+<span class="text-[#9ca8ba] text-[10px] mr-1">Read 9:43 AM</span>
+</div>
+</div>
+<!-- AI Message 2 (With Job Cards) -->
+<div class="flex items-end gap-3 group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0 border border-gray-200 dark:border-gray-700 shadow-sm" data-alt="Noah AI Avatar, a friendly robot face" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB96zN6Pq229R1FSokxQNICl5wSs5pAtBh4AGVxlBzeIYQtnG4KlXO5LVW8WKhoNmXnqav8RRjuCOjyR2kQXgACgx2GWqX6qP-Rh--5BJDWSePt4_fj5W3l0Dv4X96UWZ6xf2v2jNgZNLsIIbLxhYzy4gp_ybrS8Hrh0KjGmBpV0XS9lLnUVDbSg4HfNP48iFTltUtq6a3s2YHwr9ur6LP8DVXV3b9PWsnzou1xuyMuRZ1ECIfSuTXYW0fLrEMNnYnpWPiKggsrAg8");'></div>
+<div class="flex flex-col gap-1 max-w-[90%] sm:max-w-[80%]">
+<span class="text-[#9ca8ba] text-[11px] ml-1">Noah</span>
+<div class="flex flex-col gap-3">
+<div class="p-4 bg-white dark:bg-[#282f39] text-slate-800 dark:text-white rounded-2xl rounded-tl-none shadow-sm text-[15px] leading-relaxed">
+                        Here are the top matches. I can also tailor your resume for the Senior UX role at TechCorp.
+                    </div>
+<!-- Job Card 1 -->
+<div class="bg-white dark:bg-[#1e232b] p-3 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 dark:hover:bg-[#252b35] transition-colors">
+<div class="w-12 h-12 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-indigo-500 dark:text-indigo-400">diamond</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate">Senior UX Designer</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">TechCorp • Remote</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-xs font-bold text-green-600 dark:text-green-400">$140k</p>
+<p class="text-[10px] text-gray-400">Match: 98%</p>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-white dark:bg-[#1e232b] p-3 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 dark:hover:bg-[#252b35] transition-colors">
+<div class="w-12 h-12 rounded-lg bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-500 dark:text-orange-400">rocket_launch</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate">Product Designer</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">StartupX • NYC</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-xs font-bold text-green-600 dark:text-green-400">$125k</p>
+<p class="text-[10px] text-gray-400">Match: 92%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex items-end gap-3 group opacity-0 animate-[fadeIn_0.5s_ease-in-out_2s_forwards]">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0 border border-gray-200 dark:border-gray-700 shadow-sm" data-alt="Noah AI Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJR7nyKdRfCZjXRFMnjJY1a6HlCi3yEu7KvMxFMg-cJBHO1fj9Lhv8bu4SFwWqv_sH4JHjZR4-lLf0dmLOOtfRrGwgq5ys4pYUdgrEYQsO-0BWnsy-APOLM6ER1JkxA-u9Yw2JpumoU1imNrQUqLPbVXcZU5G78FAv3cuBLNYW4ljvkyZBGoIZur8NR3BOhq-TnEKwc0ks6n_5C8Rz6bF5lLzC-ItYY75brAIuPvcDWPoDsJo1XpneWQ8Hq1v0cSXdH068_mTSvcA");'></div>
+<div class="p-3 bg-white dark:bg-[#282f39] rounded-2xl rounded-tl-none shadow-sm flex items-center gap-1 w-16 justify-center h-10">
+<div class="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full typing-dot"></div>
+<div class="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full typing-dot"></div>
+<div class="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full typing-dot"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-[#111418]/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 z-30 pb-safe">
+<!-- Quick Actions Scroll -->
+<div class="w-full overflow-x-auto no-scrollbar py-3 px-4 flex gap-2">
+<button class="shrink-0 flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-[#1973f0]/10 text-[#1973f0] dark:text-[#5fa5f9] text-xs font-semibold rounded-full border border-indigo-100 dark:border-[#1973f0]/20 hover:bg-indigo-100 dark:hover:bg-[#1973f0]/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">person_edit</span>
+                Update persona
+            </button>
+<button class="shrink-0 flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-[#1973f0]/10 text-[#1973f0] dark:text-[#5fa5f9] text-xs font-semibold rounded-full border border-indigo-100 dark:border-[#1973f0]/20 hover:bg-indigo-100 dark:hover:bg-[#1973f0]/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">description</span>
+                Get latest resume
+            </button>
+<button class="shrink-0 flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-[#1973f0]/10 text-[#1973f0] dark:text-[#5fa5f9] text-xs font-semibold rounded-full border border-indigo-100 dark:border-[#1973f0]/20 hover:bg-indigo-100 dark:hover:bg-[#1973f0]/20 transition-colors">
+<span class="material-symbols-outlined text-[16px]">auto_fix_high</span>
+                Tailor resume
+            </button>
+</div>
+<!-- Input Field -->
+<div class="px-4 pb-4 pt-1 flex items-end gap-2">
+<button class="flex items-center justify-center w-10 h-12 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[26px]">add_circle</span>
+</button>
+<div class="flex-1 bg-gray-100 dark:bg-[#282f39] rounded-2xl flex items-center min-h-[48px] px-4 border border-transparent focus-within:border-primary/50 transition-colors">
+<input class="w-full bg-transparent border-none text-slate-900 dark:text-white placeholder-gray-400 focus:ring-0 text-sm py-3" placeholder="Ask Noah about jobs..." type="text"/>
+<button class="ml-2 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<button class="flex items-center justify-center w-12 h-12 bg-primary hover:bg-blue-600 text-white rounded-full shadow-lg shadow-blue-500/30 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[24px]">arrow_upward</span>
+</button>
+</div>
+</footer>
+<!-- CSS Animation for Fade In -->
+<style>
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        /* Safe area padding for newer iPhones */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</body></html>

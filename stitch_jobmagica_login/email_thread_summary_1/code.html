@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica - Thread Summary</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1C2530",
+                        "surface-highlight": "#2A3441",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display h-screen flex flex-col overflow-hidden selection:bg-primary/30">
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark shrink-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Thread Summary</h2>
+<div class="w-10"></div> 
+</header>
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32">
+<div class="p-4">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-16 w-16 shadow-lg border-2 border-slate-200 dark:border-slate-700" data-alt="Portrait of Sarah Jenkins, a professional woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaqVgPV40cun0QzWfJLN60KPm4cx_MUy6NZgJv6gFt3plvb-Mbwh9DwBjJosVF0-gdUYM5vH8rxKILTFnO67BdojJTcKLRHVJBU7VyjcsiHcLB4vwUnLVCxBjrSMFGmAX-BP-Dqxa-h8eNkycw8udhGomtITrV6I6zVvr2_MnRnZpo6_ZdlOeyBGFbRkMeYnQ9okv3cIRDmgiV8A85LKhGWHBbmtISRF6iY2RBmpR96Wd7Radkbp1CTAml4-BfcDXXKAqf-5b9zbA");'>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-blue-600 rounded-full p-1 border-2 border-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">link</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<h3 class="text-xl font-bold leading-tight">Sarah Jenkins</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Senior React Developer Application</p>
+<p class="text-slate-400 dark:text-slate-500 text-xs mt-0.5">Last active: 2 hours ago</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3 px-4 pb-2 overflow-x-auto no-scrollbar">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-slate-700 pl-3 pr-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_month</span>
+<p class="text-sm font-medium whitespace-nowrap">Interview Scheduled</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-slate-700 pl-3 pr-4 shadow-sm">
+<span class="material-symbols-outlined text-green-400 text-[18px]">attach_file</span>
+<p class="text-sm font-medium whitespace-nowrap">Resume Attached</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-dark border border-slate-700 pl-3 pr-4 shadow-sm">
+<span class="material-symbols-outlined text-red-400 text-[18px]">priority_high</span>
+<p class="text-sm font-medium whitespace-nowrap">High Priority</p>
+</div>
+</div>
+<div class="px-4 pt-4 pb-4">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 to-surface-dark border border-primary/20 p-5 shadow-lg">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="flex items-start gap-3 relative z-10">
+<div class="bg-primary/20 p-2 rounded-lg shrink-0">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<p class="text-base font-bold text-white">AI Summary</p>
+<span class="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">Updated 10m ago</span>
+</div>
+<p class="text-slate-300 text-sm leading-relaxed">
+                            Candidate accepted the initial screening invitation. Resume was reviewed positively by the hiring manager. Next step is confirming the Tuesday slot.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 pb-6">
+<div class="flex items-center justify-between mb-3 px-1">
+<h4 class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Suggested Actions</h4>
+<span class="text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20">AI Detected</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center gap-3 p-3 rounded-xl bg-surface-dark border border-slate-700 hover:bg-slate-700 hover:border-slate-600 active:bg-slate-800 transition-all text-left group shadow-sm">
+<div class="w-10 h-10 shrink-0 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 border border-green-500/20 group-hover:bg-green-500/20 group-hover:border-green-500/30 transition-colors">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-200 leading-tight">Confirm Interview</span>
+<span class="text-[10px] text-slate-500 group-hover:text-slate-400 mt-0.5">Mark as scheduled</span>
+</div>
+</button>
+<button class="flex items-center gap-3 p-3 rounded-xl bg-surface-dark border border-slate-700 hover:bg-slate-700 hover:border-slate-600 active:bg-slate-800 transition-all text-left group shadow-sm">
+<div class="w-10 h-10 shrink-0 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20 group-hover:bg-blue-500/20 group-hover:border-blue-500/30 transition-colors">
+<span class="material-symbols-outlined text-[20px]">forward_to_inbox</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-200 leading-tight">Send Follow-up</span>
+<span class="text-[10px] text-slate-500 group-hover:text-slate-400 mt-0.5">Draft email</span>
+</div>
+</button>
+<button class="flex items-center gap-3 p-3 rounded-xl bg-surface-dark border border-slate-700 hover:bg-slate-700 hover:border-slate-600 active:bg-slate-800 transition-all text-left group shadow-sm">
+<div class="w-10 h-10 shrink-0 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-400 border border-orange-500/20 group-hover:bg-orange-500/20 group-hover:border-orange-500/30 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notification_add</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-200 leading-tight">Remind Later</span>
+<span class="text-[10px] text-slate-500 group-hover:text-slate-400 mt-0.5">Set 2h alert</span>
+</div>
+</button>
+<button class="flex items-center gap-3 p-3 rounded-xl bg-surface-dark border border-slate-700 hover:bg-slate-700 hover:border-slate-600 active:bg-slate-800 transition-all text-left group shadow-sm">
+<div class="w-10 h-10 shrink-0 rounded-full bg-slate-500/10 flex items-center justify-center text-slate-400 border border-slate-500/20 group-hover:bg-slate-500/20 group-hover:border-slate-500/30 transition-colors">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-200 leading-tight">Archive</span>
+<span class="text-[10px] text-slate-500 group-hover:text-slate-400 mt-0.5">Close thread</span>
+</div>
+</button>
+</div>
+</div>
+<div class="px-4 pt-2">
+<h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4 px-2">Timeline</h4>
+<div class="grid grid-cols-[40px_1fr] gap-x-2">
+<div class="flex flex-col items-center gap-1 pt-1">
+<div class="bg-primary/20 p-1.5 rounded-full flex items-center justify-center border border-primary/40">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+</div>
+<div class="w-[1px] bg-slate-700 h-full grow my-1"></div>
+</div>
+<div class="flex flex-1 flex-col pb-6">
+<div class="bg-surface-dark p-3 rounded-lg border border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<p class="text-white text-sm font-semibold leading-normal">Candidate Confirmed</p>
+<p class="text-slate-500 text-xs whitespace-nowrap">Oct 24, 2:15 PM</p>
+</div>
+<p class="text-slate-400 text-sm">Confirmed for Tuesday 2 PM via email reply.</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-[1px] bg-slate-700 h-2"></div>
+<div class="bg-surface-dark p-1.5 rounded-full flex items-center justify-center border border-slate-700">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">mail</span>
+</div>
+<div class="w-[1px] bg-slate-700 h-full grow my-1"></div>
+</div>
+<div class="flex flex-1 flex-col pb-6">
+<p class="text-slate-200 text-sm font-medium leading-normal">Screening Invite Sent</p>
+<p class="text-slate-500 text-xs">Oct 23 • Sent by You</p>
+</div>
+<div class="flex flex-col items-center gap-1 pb-1">
+<div class="w-[1px] bg-slate-700 h-2"></div>
+<div class="bg-surface-dark p-1.5 rounded-full flex items-center justify-center border border-slate-700">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">description</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col pb-2">
+<p class="text-slate-200 text-sm font-medium leading-normal">Application Received</p>
+<p class="text-slate-500 text-xs">Oct 22 • via LinkedIn Integration</p>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 w-full bg-surface-dark/95 backdrop-blur-md border-t border-slate-800 z-20 pb-safe">
+<div class="px-4 py-3 flex gap-3 overflow-x-auto no-scrollbar border-b border-slate-800/50">
+<button class="flex-1 bg-primary hover:bg-blue-600 text-white text-sm font-medium py-2.5 px-4 rounded-lg shadow-lg shadow-blue-900/20 flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">send</span>
+                Confirm Time
+            </button>
+<button class="flex-1 bg-surface-highlight hover:bg-slate-700 text-white text-sm font-medium py-2.5 px-4 rounded-lg border border-slate-700 flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+                Draft Reply
+            </button>
+<button class="bg-surface-highlight hover:bg-slate-700 text-white text-sm font-medium p-2.5 rounded-lg border border-slate-700 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<nav class="flex justify-around items-center px-2 py-2">
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-white transition-colors w-16" href="#">
+<span class="material-symbols-outlined text-[24px]">inbox</span>
+<span class="text-[10px] font-medium">Inbox</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-primary w-16" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current">group</span>
+<span class="text-[10px] font-medium">People</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-white transition-colors w-16" href="#">
+<span class="material-symbols-outlined text-[24px]">work</span>
+<span class="text-[10px] font-medium">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-400 hover:text-white transition-colors w-16" href="#">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+<div class="h-1 bg-transparent"></div>
+</div>
+
+</body></html>

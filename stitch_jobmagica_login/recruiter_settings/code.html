@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recruiter Settings - JobMagica</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a222d",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#2a3441",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a3441;
+            border-radius: 4px;
+        }
+        /* Toggle Switch CSS */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #1973f0;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #1973f0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-surface-light dark:bg-background-dark p-4 border-b border-border-light dark:border-border-dark/50">
+<div class="flex size-10 shrink-0 items-center justify-center cursor-pointer text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Settings</h2>
+</div>
+<!-- Scrollable Content -->
+<div class="flex flex-col gap-6 p-4">
+<!-- Profile Header -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-border-light dark:border-border-dark">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16" data-alt="Professional headshot of a female recruiter with a friendly expression" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTvJhZ2hLyysz6kB8WAsaHeP6Zpt89fmR2RxsMTLjXpkFra8qC16QKaI027K5c1z4tlaCYkNU189dXImExQWMnjQWPLyFbr2YmUFFT9GJ7LiI9OdZfEj9nXF9_Gy9rwm37SvgLVvCh2jOSAwl4qDUk6qF07f686KtYUifEbFcObhgjttNOKmeilTeANIa5ot6Vs4jJZdTeN0L4XVGJ_47Rb74stXbNev7LT0gHey_ZITJOZXdjK2cwpA5u4u8-alkTtami3HQL--4");'></div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-lg font-bold leading-tight">Sarah Jenkins</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Senior Recruiter</p>
+</div>
+<div class="text-primary font-medium text-sm cursor-pointer">Edit</div>
+</div>
+</div>
+<!-- Account Section -->
+<div>
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider px-2 mb-2">Account</h3>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-border-light dark:border-border-dark">
+<!-- Change Password -->
+<div class="flex items-center gap-4 p-4 justify-between border-b border-border-light dark:border-border-dark cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<p class="text-base font-medium">Change Password</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<!-- 2FA -->
+<div class="flex items-center gap-4 p-4 justify-between cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-primary shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<p class="text-base font-medium">Two-Factor Authentication</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Notification Preferences -->
+<div>
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider px-2 mb-2">Notifications</h3>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-border-light dark:border-border-dark">
+<!-- Candidate Updates -->
+<div class="flex items-center gap-4 p-4 justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+</div>
+<div class="flex flex-col">
+<p class="text-base font-medium">Candidate Updates</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Alerts on new applications</p>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 dark:peer-focus:ring-primary/30 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Interview Reminders -->
+<div class="flex items-center gap-4 p-4 justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+</div>
+<p class="text-base font-medium">Interview Reminders</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 dark:peer-focus:ring-primary/30 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- AI Alerts -->
+<div class="flex items-center gap-4 p-4 justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<p class="text-base font-medium">AI Analysis Alerts</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Smart candidate matching</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 dark:peer-focus:ring-primary/30 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Team Management -->
+<div>
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider px-2 mb-2">Team</h3>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4 p-4 justify-between border-b border-border-light dark:border-border-dark cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+</div>
+<p class="text-base font-medium">Manage Members</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 justify-between cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+</div>
+<p class="text-base font-medium">Roles &amp; Permissions</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Integrations -->
+<div>
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider px-2 mb-2">Integrations</h3>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-border-light dark:border-border-dark">
+<!-- Calendar -->
+<div class="flex items-center gap-4 p-4 justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<p class="text-base font-medium">Calendar Sync</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 dark:peer-focus:ring-primary/30 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Email -->
+<div class="flex items-center gap-4 p-4 justify-between cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<p class="text-base font-medium">Email Integration</p>
+</div>
+<span class="text-sm font-medium text-green-500 flex items-center gap-1">
+                        Connected
+                        <span class="material-symbols-outlined text-[16px]">check_circle</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Help & Support -->
+<div>
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-wider px-2 mb-2">Support</h3>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4 p-4 justify-between border-b border-border-light dark:border-border-dark cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-slate-600 dark:text-slate-300 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</div>
+<p class="text-base font-medium">Help Center</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 p-4 justify-between cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 text-slate-600 dark:text-slate-300 shrink-0 size-9">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<p class="text-base font-medium">Privacy Policy</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Logout Button -->
+<button class="w-full bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-border-light dark:border-border-dark text-red-500 font-bold text-center mt-2 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+            Log Out
+        </button>
+<div class="h-20"></div> <!-- Spacer for bottom nav -->
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-light dark:bg-[#151b24] border-t border-border-light dark:border-border-dark/50 flex justify-between items-center px-6 py-3 pb-6 safe-area-pb z-20">
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Dashboard</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">person_search</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Candidates</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">work</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Jobs</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-[24px]">chat</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Inbox</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[24px]">settings</span>
+<span class="text-[10px] font-medium text-primary">Settings</span>
+</div>
+</div>
+</div>
+</body></html>

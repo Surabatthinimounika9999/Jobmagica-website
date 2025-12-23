@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Admin - User Management</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1e2430",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden selection:bg-primary/30">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark border-x border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<header class="flex items-center px-4 py-3 justify-between sticky top-0 z-20 bg-background-light dark:bg-background-dark backdrop-blur-xl bg-opacity-90 dark:bg-opacity-90 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">User Management</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-background-light dark:border-background-dark"></span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto pb-24 scrollbar-hide">
+<!-- Search Bar -->
+<div class="px-4 py-3 sticky top-0 z-10 bg-background-light dark:bg-background-dark">
+<div class="relative flex w-full items-center rounded-lg bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<div class="flex items-center justify-center pl-3 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none py-3 pl-2 pr-4 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:ring-0" placeholder="Search users by name, email, or role..." type="text"/>
+<button class="pr-3 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 px-4 pb-4 overflow-x-auto scrollbar-hide">
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-primary text-white text-xs font-semibold shadow-sm transition-transform active:scale-95">All Users</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors active:scale-95">Recruiters</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors active:scale-95">Job Seekers</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors active:scale-95">Admins</button>
+<button class="shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-red-500 dark:text-red-400 text-xs font-medium hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors active:scale-95">Suspended</button>
+</div>
+<!-- Section Title -->
+<div class="px-4 py-2 flex justify-between items-end">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Directory (248)</h3>
+<span class="text-xs text-primary font-medium cursor-pointer">Sort by: Recent</span>
+</div>
+<!-- User List -->
+<div class="flex flex-col gap-1 px-2">
+<!-- List Item 1: Recruiter -->
+<div class="group relative flex items-center justify-between p-3 rounded-lg hover:bg-white dark:hover:bg-surface-dark transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-sm">
+<div class="flex items-center gap-3.5 overflow-hidden">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center border border-slate-200 dark:border-slate-700" data-alt="Portrait of Sarah Jones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLfFuPfwlDeaOdESzumvie5N-XQ91IoxXa6fOB8PDFZ7Aw6O0uIZdTTHQEQXFQB366YoHpskPoWt3tHmdl8LM1InVUrhrr64Rcg5F2OUrtN7JJm6GkuYSkeG9pqO-gToMpTqJD_EDi8stmyd8LE6ysdC148mdRhb02qTwQQ6eEwCQR8guP8CAQL5AB3izY97bEqMzyTThWy9oTr-WgN-9HAPBuIZpGSaZJiNOWcu2zKDwViJMuE-k_-mFkBmd5TUmb53tBWq7l9YU');"></div>
+<span class="absolute bottom-0 right-0 size-3 rounded-full bg-emerald-500 border-2 border-white dark:border-surface-dark"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="truncate font-semibold text-slate-900 dark:text-white text-base">Sarah Jones</span>
+<span class="material-symbols-outlined text-[14px] text-primary" title="AI Verified">verified</span>
+</div>
+<span class="truncate text-sm text-slate-500 dark:text-slate-400">sarah.j@techcorp.com</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-purple-100 dark:bg-purple-900/30 px-2 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-300 ring-1 ring-inset ring-purple-600/20">Recruiter</span>
+<span class="text-xs text-slate-400 dark:text-slate-500">• Active 2m ago</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- List Item 2: Job Seeker (Pending) -->
+<div class="group relative flex items-center justify-between p-3 rounded-lg hover:bg-white dark:hover:bg-surface-dark transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-sm">
+<div class="flex items-center gap-3.5 overflow-hidden">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center border border-slate-200 dark:border-slate-700" data-alt="Portrait of Mike Ross" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA37hv4yq0bqBsGOlLf6mEH430W6_hOh-8U-lo_SPmntllUzUHCZnFherfaNNbPsK_I35Mougq489OuJcS8iw-NCOLYdF0yJHYd29Q3ISP645PlVshqi0qFDj66P098GDJxytjPnuJW_FsBZpwc-P8ro57XrzBZ8xgAuQZukubVtyOMCTRTlRW5S0Chl7V9a8OKuO_RGqk17e_mUyLtTpj6B-noPj8PtGHmE8E-dcCWU9ATIf9QEmFwGqQ3YBvxITmZLyQjUfS-Saw');"></div>
+<!-- Offline/Away status -->
+<span class="absolute bottom-0 right-0 size-3 rounded-full bg-slate-400 border-2 border-white dark:border-surface-dark"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="truncate font-semibold text-slate-900 dark:text-white text-base">Mike Ross</span>
+</div>
+<span class="truncate text-sm text-slate-500 dark:text-slate-400">m.ross@jobmagica.com</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-sky-100 dark:bg-sky-900/30 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300 ring-1 ring-inset ring-sky-600/20">Job Seeker</span>
+<span class="inline-flex items-center gap-1 rounded-md bg-amber-50 dark:bg-amber-900/20 px-2 py-0.5 text-xs font-medium text-amber-600 dark:text-amber-400 ring-1 ring-inset ring-amber-600/20">
+<span class="material-symbols-outlined text-[10px]">hourglass_top</span> Pending
+                                </span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- List Item 3: Admin -->
+<div class="group relative flex items-center justify-between p-3 rounded-lg hover:bg-white dark:hover:bg-surface-dark transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-sm">
+<div class="flex items-center gap-3.5 overflow-hidden">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full flex items-center justify-center bg-primary text-white font-bold text-lg border border-slate-200 dark:border-slate-700">
+                                AD
+                            </div>
+<span class="absolute bottom-0 right-0 size-3 rounded-full bg-emerald-500 border-2 border-white dark:border-surface-dark"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="truncate font-semibold text-slate-900 dark:text-white text-base">Admin Account</span>
+</div>
+<span class="truncate text-sm text-slate-500 dark:text-slate-400">admin@jobmagica.com</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-700 px-2 py-0.5 text-xs font-medium text-slate-700 dark:text-slate-300 ring-1 ring-inset ring-slate-600/20">Super Admin</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- List Item 4: Suspended User -->
+<div class="group relative flex items-center justify-between p-3 rounded-lg hover:bg-white dark:hover:bg-surface-dark transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-sm opacity-75">
+<div class="flex items-center gap-3.5 overflow-hidden">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center grayscale border border-slate-200 dark:border-slate-700" data-alt="Portrait of Julian Smith" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWQQGsIDnOM5l1Dnavq_wrK45_ibYMyIFS279iI6NmuzVOk1KaupmQt4GVfAYRdvgnRlfTL-ky_gRrU8QYp-C6taVOa2UgcvtQdYKGyTHPoosZhDgfzN1SfmkJQmvyu_0V_7qlXgB9kFsP6UmCVjgKs7KiD4PulLLKe8vMOH4p7AU39aBuKH0UN2TpXmnvWXidi3g5Jz4-zj-M8i_gMEgLJEksqpPkmzyZZcgglWXQm2ugk2HoNq3BJ0vKqQnENVGgBI1ISFIynSc');"></div>
+<span class="absolute bottom-0 right-0 size-3 rounded-full bg-red-500 border-2 border-white dark:border-surface-dark"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="truncate font-semibold text-slate-900 dark:text-white text-base line-through decoration-slate-400">Julian Smith</span>
+<span class="material-symbols-outlined text-[14px] text-red-500" title="Flagged by AI">warning</span>
+</div>
+<span class="truncate text-sm text-slate-500 dark:text-slate-400">julian.s@example.com</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-sky-100 dark:bg-sky-900/30 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300 ring-1 ring-inset ring-sky-600/20">Job Seeker</span>
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/20 px-2 py-0.5 text-xs font-medium text-red-700 dark:text-red-400 ring-1 ring-inset ring-red-600/10">Banned</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- List Item 5: Recruiter -->
+<div class="group relative flex items-center justify-between p-3 rounded-lg hover:bg-white dark:hover:bg-surface-dark transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-sm">
+<div class="flex items-center gap-3.5 overflow-hidden">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center border border-slate-200 dark:border-slate-700" data-alt="Portrait of Emily Chen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNAEqepZk1FHETbF_nMFbkn_gmQkPN7WYGYO9xHDedMLwkxVYkSQ-2QE0XcrJdjUd9ztiIZ6OoBBQ7QbsFjQ-zxJue6XbdJo7bG1s8HhCF2K2qg-FwPLW5O7qoWuJk9UAO1GPOwW6SsyWkpCcOjUVphejfI9mbYJQaHFnLSXW8Iz7NmfsOpnRrtVZe5cGOiB4bbAXZWh7Un_hdai_N6aXkWPtYajTUIh1jOG3JgTvyeJR7_WUlJbrgj6STKzeJnyro4sh4MSc29Yw');"></div>
+<span class="absolute bottom-0 right-0 size-3 rounded-full bg-emerald-500 border-2 border-white dark:border-surface-dark"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="truncate font-semibold text-slate-900 dark:text-white text-base">Emily Chen</span>
+</div>
+<span class="truncate text-sm text-slate-500 dark:text-slate-400">e.chen@hiringfast.io</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-purple-100 dark:bg-purple-900/30 px-2 py-0.5 text-xs font-medium text-purple-700 dark:text-purple-300 ring-1 ring-inset ring-purple-600/20">Recruiter</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- List Item 6: Job Seeker -->
+<div class="group relative flex items-center justify-between p-3 rounded-lg hover:bg-white dark:hover:bg-surface-dark transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700 hover:shadow-sm">
+<div class="flex items-center gap-3.5 overflow-hidden">
+<div class="relative shrink-0">
+<div class="size-12 rounded-full bg-cover bg-center border border-slate-200 dark:border-slate-700" data-alt="Portrait of David Kim" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8AATL-Ect1gdhDoFskOWv1JZm-1Ahd-WGvbQkEThOBtO19jwHkVBZe1-6flNfEdjd-GVflqG-zza6tyVPqoo-FZ4M8D-LDF8S1HAci0l-6UiCGBYhF1hg2yZUsa4B1gszntmBYF7sDQ6U1sGM3QoKUmK_n-HYHmCqzng8XGtnrCZi2pFXHrKHv_KJRNT4Bt3DM9W4qSzHHPqFKE2H6oguW9ET9VXKENhCIpAqOD5hL69T3tXdMgdR1isoo5oX5jUw1R0tr-jf9y0');"></div>
+<span class="absolute bottom-0 right-0 size-3 rounded-full bg-slate-400 border-2 border-white dark:border-surface-dark"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="truncate font-semibold text-slate-900 dark:text-white text-base">David Kim</span>
+</div>
+<span class="truncate text-sm text-slate-500 dark:text-slate-400">d.kim@university.edu</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-sky-100 dark:bg-sky-900/30 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300 ring-1 ring-inset ring-sky-600/20">Job Seeker</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Loading State Indicator -->
+<div class="py-4 flex justify-center">
+<div class="size-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+</div>
+</div>
+<!-- Bottom Spacer for Tab Bar -->
+<div class="h-24"></div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full z-20 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex justify-around items-center h-16 pb-2">
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] font-semibold">group</span>
+<span class="text-[10px] font-medium">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform">work</span>
+<span class="absolute -top-0.5 -right-0.5 size-2 bg-primary rounded-full"></span>
+</div>
+<span class="text-[10px] font-medium">Jobs</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary group" href="#">
+<span class="material-symbols-outlined text-[24px] group-hover:scale-110 transition-transform">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Floating Action Button (Optional secondary action) -->
+<!-- 
+        <button class="absolute bottom-20 right-4 size-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center hover:bg-primary/90 active:scale-95 transition-all z-30">
+            <span class="material-symbols-outlined text-2xl">person_add</span>
+        </button> 
+        -->
+<!-- Modal Overlay (Hidden by default, shown for structure demonstration) -->
+<!-- <div class="absolute inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-4"> -->
+<!-- Modal Content would go here -->
+<!-- </div> -->
+</div>
+</body></html>

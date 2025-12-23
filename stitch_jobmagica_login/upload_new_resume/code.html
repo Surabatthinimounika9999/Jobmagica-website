@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica - Upload Resume</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1973f0",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased overflow-x-hidden">
+<div class="relative flex flex-col min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-gray-800">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-center flex-1 pr-10">Upload Resume</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-4 pt-6 gap-6">
+<!-- Headline Section -->
+<div class="flex flex-col gap-2 text-center">
+<h2 class="text-2xl font-bold tracking-tight">Add Your Resume</h2>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-[320px] mx-auto">
+                    Upload your CV to let our AI match you with the best jobs automatically.
+                </p>
+</div>
+<!-- Upload Area (Empty State) -->
+<div class="flex flex-col">
+<div class="relative flex flex-col items-center justify-center gap-6 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1A222C] px-6 py-10 transition-colors hover:border-primary/50 dark:hover:border-primary/50 group cursor-pointer">
+<!-- Decorative Icon BG -->
+<div class="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl">cloud_upload</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<p class="text-lg font-bold text-gray-900 dark:text-white">Tap to browse</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">
+                            Supported formats: PDF, DOCX (Max 5MB)
+                        </p>
+</div>
+<button class="flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold tracking-wide shadow-lg shadow-blue-500/20 transition-all active:scale-95 w-full max-w-[200px]">
+                        Select File
+                    </button>
+</div>
+</div>
+<!-- Upload Progress / Recent Activity (Visual Feedback) -->
+<div class="flex flex-col gap-4 mt-2">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-semibold text-gray-900 dark:text-white">Recent Activity</h3>
+</div>
+<!-- Active Upload Item -->
+<div class="rounded-lg bg-white dark:bg-[#1A222C] p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-start gap-3 mb-3">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-red-500/10">
+<span class="material-symbols-outlined text-red-500">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-1">
+<p class="text-sm font-medium text-gray-900 dark:text-white truncate">my_resume_final.pdf</p>
+<span class="text-xs font-medium text-primary">85%</span>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400">AI Parsing...</p>
+</div>
+<button class="text-gray-400 hover:text-gray-500">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Progress Bar -->
+<div class="h-1.5 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 85%"></div>
+</div>
+</div>
+<!-- Completed Item -->
+<div class="rounded-lg bg-white dark:bg-[#1A222C] p-4 shadow-sm border border-gray-100 dark:border-gray-800 opacity-60">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
+<span class="material-symbols-outlined text-blue-500">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-gray-900 dark:text-white truncate">old_cv_2023.docx</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Uploaded 2 months ago</p>
+</div>
+<span class="material-symbols-outlined text-green-500 text-xl">check_circle</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#1A222C] border-t border-gray-200 dark:border-gray-800 pb-safe">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">search</span>
+<span class="text-[10px] font-medium">Search</span>
+</a>
+<!-- Active Item -->
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl filled">cloud_upload</span>
+<span class="text-[10px] font-medium">Upload</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">chat_bubble</span>
+<span class="text-[10px] font-medium">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<div class="h-6 w-6 rounded-full bg-gray-300 dark:bg-gray-600 overflow-hidden relative">
+<!-- Profile Placeholder -->
+<img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTxIUMNgirtv9hbfYGq3zjYPcJU4fDRndRa34AYg_rirSnae5q5PkK9-0LRm4J-XC9dFz0rCS4-XfVmb3HXQn0DnQuJwIHjoRrAjiqo4cKyr35r87dk-s2-SV-YIt3HRKSkyy36U9tjqf-j_F2XQXG4wPPoiTjysRZq5TWG9GDPh-chc4wxtEATTUNn9lXlI9i8s2B5zcpCcBS1oA0o6du-cR8nJ3ZiiamguKq-pa5Lub07R9ApwNBsb1nfGUIjAAYF1JJDcpnoAA"/>
+</div>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-5 w-full bg-white dark:bg-[#1A222C]"></div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Admin - System Logs</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1973f0",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e242e", // Slightly lighter than background-dark
+              "border-dark": "#2d3748",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom Scrollbar for horizontal scrolling areas */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md p-4 border-b border-gray-200 dark:border-border-dark">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center text-slate-700 dark:text-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">System Logs</h1>
+</div>
+<button class="flex items-center justify-center text-slate-700 dark:text-white hover:text-primary transition-colors p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</header>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<div class="relative flex w-full items-center rounded-xl bg-white dark:bg-surface-dark shadow-sm ring-1 ring-gray-900/5 dark:ring-white/10">
+<div class="flex h-full items-center pl-4 text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full border-0 bg-transparent py-3 pl-3 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" placeholder="Search User ID, Event, or Error..." type="text"/>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto px-4 pb-2 hide-scrollbar">
+<!-- Active Chip -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-4 shadow-sm">
+<span class="text-white text-sm font-medium">All Events</span>
+</button>
+<!-- Inactive Chips -->
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark ring-1 ring-gray-900/5 dark:ring-white/10 px-4 transition hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Errors</span>
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 text-xs font-bold text-red-600 dark:text-red-400">3</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark ring-1 ring-gray-900/5 dark:ring-white/10 px-4 transition hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Warnings</span>
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30 text-xs font-bold text-amber-600 dark:text-amber-400">12</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark ring-1 ring-gray-900/5 dark:ring-white/10 px-4 transition hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">AI Workflow</span>
+</button>
+</div>
+<!-- Timeline / Log List -->
+<div class="flex flex-col gap-1 mt-2">
+<!-- Date Divider -->
+<div class="sticky top-[72px] z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur px-4 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                Today
+            </div>
+<!-- Log Item: Critical -->
+<div class="group relative flex gap-4 bg-white dark:bg-background-dark px-4 py-4 hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors border-b border-gray-100 dark:border-border-dark/50">
+<div class="relative shrink-0">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined">wifi_off</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate">API Timeout</p>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">11:02 AM</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-snug line-clamp-2">
+                        Email service unavailable. 500ms latency exceeded for outgoing notifications.
+                    </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-400/10 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-400 ring-1 ring-inset ring-red-600/10 dark:ring-red-400/20">Critical</span>
+<span class="text-xs text-slate-500 font-mono">sys_notification_svc</span>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Log Item: Warning -->
+<div class="group relative flex gap-4 bg-white dark:bg-background-dark px-4 py-4 hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors border-b border-gray-100 dark:border-border-dark/50">
+<div class="relative shrink-0">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400">
+<span class="material-symbols-outlined">warning</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate">Failed Login Attempt</p>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">10:42 AM</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-snug line-clamp-2">
+                        Multiple failed attempts detected for <span class="text-primary font-medium">recruiter@company.com</span> from IP 192.168.1.45.
+                    </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-amber-50 dark:bg-amber-400/10 px-2 py-1 text-xs font-medium text-amber-700 dark:text-amber-400 ring-1 ring-inset ring-amber-600/20 dark:ring-amber-400/20">Warning</span>
+<span class="text-xs text-slate-500 font-mono">Security_Bot</span>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Log Item: Success (AI) -->
+<div class="group relative flex gap-4 bg-white dark:bg-background-dark px-4 py-4 hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors border-b border-gray-100 dark:border-border-dark/50">
+<div class="relative shrink-0">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate">Resume Parsed</p>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">10:45 AM</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-snug line-clamp-2">
+                        Successfully extracted skills and experience for candidate <span class="text-primary font-medium">#4928</span>.
+                    </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-green-50 dark:bg-green-400/10 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20 dark:ring-green-400/20">Success</span>
+<span class="text-xs text-slate-500 font-mono">AI_Parser</span>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Log Item: Info -->
+<div class="group relative flex gap-4 bg-white dark:bg-background-dark px-4 py-4 hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors border-b border-gray-100 dark:border-border-dark/50">
+<div class="relative shrink-0">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined">mail</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate">Email Dispatched</p>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">09:30 AM</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-snug line-clamp-2">
+                        Weekly digest sent to 450 subscribed recruiters.
+                    </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-400/10 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-400 ring-1 ring-inset ring-blue-700/10 dark:ring-blue-400/20">Info</span>
+<span class="text-xs text-slate-500 font-mono">Mailer_Daemon</span>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Date Divider -->
+<div class="sticky top-[72px] z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur px-4 py-2 mt-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                Yesterday
+            </div>
+<!-- Log Item: Info (Older) -->
+<div class="group relative flex gap-4 bg-white dark:bg-background-dark px-4 py-4 hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors border-b border-gray-100 dark:border-border-dark/50">
+<div class="relative shrink-0">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate">New User Registration</p>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">04:15 PM</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-snug line-clamp-2">
+                        User <span class="text-primary font-medium">john.doe@example.com</span> completed onboarding flow.
+                    </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-purple-50 dark:bg-purple-400/10 px-2 py-1 text-xs font-medium text-purple-700 dark:text-purple-400 ring-1 ring-inset ring-purple-700/10 dark:ring-purple-400/20">Audit</span>
+<span class="text-xs text-slate-500 font-mono">Auth_Service</span>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+<!-- Log Item: Error (Older) -->
+<div class="group relative flex gap-4 bg-white dark:bg-background-dark px-4 py-4 hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors border-b border-gray-100 dark:border-border-dark/50">
+<div class="relative shrink-0">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined">database</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-center justify-between mb-0.5">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate">DB Connection Lost</p>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">02:22 PM</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-snug line-clamp-2">
+                        Replica set primary node unreachable. Automatic failover triggered.
+                    </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-400/10 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-400 ring-1 ring-inset ring-red-600/10 dark:ring-red-400/20">Critical</span>
+<span class="text-xs text-slate-500 font-mono">Infrastructure</span>
+</div>
+</div>
+<div class="shrink-0 self-center">
+<span class="material-symbols-outlined text-slate-400 text-sm">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Optional per plan) -->
+<div class="fixed bottom-24 right-4 z-30">
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:bg-blue-600 transition-transform active:scale-95">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 z-40 w-full border-t border-gray-200 dark:border-border-dark bg-white dark:bg-[#101822] pb-safe pt-2">
+<div class="flex justify-around items-center h-16">
+<!-- Dashboard -->
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<!-- Users -->
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-[10px] font-medium">Users</span>
+</a>
+<!-- Logs (Active) -->
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-primary dark:text-primary transition-colors relative" href="#">
+<div class="absolute -top-2 h-1 w-12 bg-primary rounded-b-full shadow-[0_0_10px_rgba(25,115,240,0.5)]"></div>
+<span class="material-symbols-outlined text-[24px] fill-current">assignment</span>
+<span class="text-[10px] font-medium">Logs</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center w-full h-full space-y-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Safety padding for bottom nav on older phones -->
+<div class="h-6"></div>
+</div>
+</body></html>

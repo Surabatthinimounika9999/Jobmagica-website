@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica - Resume Preview</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "card-dark": "#1C2530", // Custom surface color for better contrast
+                        "text-secondary": "#9ca8ba"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white overflow-x-hidden antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Top Sticky Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 py-3 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<h1 class="text-lg font-bold tracking-tight">Profile Preview</h1>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">share</span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 flex flex-col pb-24">
+<!-- Profile Header Section -->
+<section class="p-4 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="w-20 h-20 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Portrait of Alex Johnson smiling professionally" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0fYe9EFz71cUe6rqkxqEMN7xJuvoqhl778qMjTYvLLABYkrV5jMiBRrFWvOlcchG43KONotTS4MYv0vuRHDI7qTeC-J7p7utRAc74toACJ4TmpvQm9nqSgWvwj7zm9GNYsbZzM8EbnCjx7lfh13rfiOPyoTbNFpNu6MkLm_BTz7ox7uR2fvtMzNW92XDZ12Pxys2yjt0NFOcdHf137RdJHyL-J8E7DL29Pi3Gd-yl7rQJRKHL_61oyaH8O7u20W1XXQ65js8wBWA");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary rounded-full p-1 border-2 border-background-dark">
+<span class="material-symbols-outlined text-white text-[16px]">check</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<h2 class="text-xl font-bold leading-tight">Alex Johnson</h2>
+<p class="text-text-secondary text-sm font-medium">Senior UX Designer</p>
+<div class="flex items-center gap-1 mt-1 text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs">San Francisco, CA</span>
+</div>
+</div>
+<button class="ml-auto rounded-full p-2 bg-gray-200 dark:bg-card-dark text-primary">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</section>
+<!-- Completeness Progress Bar -->
+<section class="px-4 pb-4">
+<div class="flex flex-col gap-2 rounded-xl bg-white dark:bg-card-dark p-4 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold dark:text-white">Profile Strength</span>
+<span class="text-sm font-bold text-primary">75%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-xs text-text-secondary mt-1">Complete your profile to appear in 3x more searches.</p>
+</div>
+</section>
+<!-- High Priority Action Panel -->
+<section class="px-4 pb-6">
+<div class="flex flex-col gap-4 rounded-xl border border-yellow-500/30 bg-yellow-500/10 p-4">
+<div class="flex gap-3">
+<div class="mt-0.5 text-yellow-500">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-bold text-white">Missing Information</p>
+<p class="text-text-secondary text-sm">We noticed you are missing your GitHub link. Adding it increases visibility by 20%.</p>
+</div>
+</div>
+<button class="w-full h-9 rounded-lg bg-primary text-white text-sm font-medium hover:bg-blue-600 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_link</span>
+                        Add Link
+                    </button>
+</div>
+</section>
+<!-- Resume Sections -->
+<!-- Summary -->
+<div class="flex flex-col gap-2 px-4 mb-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold tracking-tight">Professional Summary</h3>
+<span class="material-symbols-outlined text-text-secondary text-sm cursor-pointer">edit</span>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-gray-800 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    Passionate Senior UX Designer with 5+ years of experience crafting user-centric digital products. Expert in translating complex requirements into intuitive workflows. Proven track record of leading design teams and improving user engagement by 40%.
+                </div>
+</div>
+<!-- Experience -->
+<div class="flex flex-col gap-2 px-4 mb-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold tracking-tight">Experience</h3>
+<button class="text-primary text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">add</span> Add
+                    </button>
+</div>
+<!-- Job 1 -->
+<div class="flex flex-col p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-gray-800 gap-3">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-lg bg-white p-1 flex items-center justify-center shrink-0">
+<img alt="Google Logo" class="w-full h-full object-contain" data-alt="Google company logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChLqNNEjlS0NJ-dyI3iKNoRGAJVX1qegrfpmVnGa-npChXCgcf-hgAMwOj2OVWUSXnCmQDNubHgCoGEXfQOxWJ6WMOu6aPrj8Cy4wNjdl2Qnkku4cE55YUZBcBAQR4GeoIlDKv_XTOusnJPwH_kOu4RVrJKwHpHhu2HNimdtyhfmyJE-5-ZlfoWO1Ux53sTqjA9lsbczI7OF87ZF5B_KuMfozEJQqTFrzOEQl-zwd93hKjmBUOeap_MqWHbHLjol0aOP_C90MsNFA"/>
+</div>
+<div class="flex flex-col flex-1">
+<h4 class="font-bold text-sm">Senior UX Designer</h4>
+<p class="text-text-secondary text-xs">TechFlow Inc. • Full-time</p>
+<p class="text-text-secondary text-xs mt-0.5">Jan 2020 - Present • 3 yrs 5 mos</p>
+</div>
+</div>
+<div class="pl-13 text-sm text-gray-600 dark:text-gray-300">
+<ul class="list-disc pl-4 space-y-1">
+<li>Spearheaded the redesign of the core mobile app, increasing daily active users by 25%.</li>
+<li>Mentored 3 junior designers and established a design system used across 4 products.</li>
+</ul>
+</div>
+</div>
+<!-- Interspersed Alert -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-dashed border-gray-600 bg-white/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">magic_button</span>
+<span class="text-xs font-medium text-gray-300">AI Suggestion: Add metrics for this role</span>
+</div>
+<button class="text-primary text-xs font-bold uppercase">Review</button>
+</div>
+<!-- Job 2 -->
+<div class="flex flex-col p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-gray-800 gap-3">
+<div class="flex gap-3">
+<div class="w-10 h-10 rounded-lg bg-indigo-500 flex items-center justify-center shrink-0 text-white font-bold text-lg">
+                           C
+                        </div>
+<div class="flex flex-col flex-1">
+<h4 class="font-bold text-sm">Product Designer</h4>
+<p class="text-text-secondary text-xs">Creative Studio</p>
+<p class="text-text-secondary text-xs mt-0.5">Jun 2018 - Dec 2019 • 1 yr 7 mos</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Education -->
+<div class="flex flex-col gap-2 px-4 mb-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold tracking-tight">Education</h3>
+<span class="material-symbols-outlined text-text-secondary text-sm cursor-pointer">edit</span>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-gray-800 flex gap-4 items-center">
+<div class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-gray-400">school</span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Stanford University</h4>
+<p class="text-text-secondary text-xs">B.S. Computer Science • 2014 - 2018</p>
+</div>
+</div>
+</div>
+<!-- Skills -->
+<div class="flex flex-col gap-2 px-4 mb-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold tracking-tight">Skills</h3>
+<span class="material-symbols-outlined text-text-secondary text-sm cursor-pointer">edit</span>
+</div>
+<div class="p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-gray-800">
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Figma</span>
+<span class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">User Research</span>
+<span class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Prototyping</span>
+<span class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">HTML/CSS</span>
+<span class="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">Adobe XD</span>
+<!-- AI Added Skill Tag -->
+<span class="px-3 py-1.5 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold border border-purple-500/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">auto_awesome</span>
+                            Agile
+                        </span>
+</div>
+</div>
+</div>
+<!-- Empty State / Add Section -->
+<div class="px-4 mb-8">
+<button class="w-full py-4 rounded-xl border-2 border-dashed border-gray-700 hover:border-primary/50 text-text-secondary hover:text-primary bg-transparent flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-medium text-sm">Add Custom Section</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white dark:bg-[#1b2027] border-t border-gray-200 dark:border-gray-800 z-50 safe-area-bottom">
+<div class="flex justify-around items-center px-2 py-2 pb-5">
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">work</span>
+<span class="text-[10px] font-medium text-text-secondary group-hover:text-primary transition-colors">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px]" href="#">
+<span class="material-symbols-outlined text-primary fill-current">person</span>
+<span class="text-[10px] font-medium text-primary">Profile</span>
+</a>
+<!-- Center FAB simulation for "Save" -->
+<div class="relative -top-6">
+<button class="flex items-center justify-center w-12 h-12 rounded-full bg-primary shadow-lg shadow-blue-500/40 text-white">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] group" href="#">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">chat_bubble</span>
+<span class="text-[10px] font-medium text-text-secondary group-hover:text-primary transition-colors">Messages</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] group" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">notifications</span>
+<div class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500 border border-[#1b2027]"></div>
+</div>
+<span class="text-[10px] font-medium text-text-secondary group-hover:text-primary transition-colors">Alerts</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

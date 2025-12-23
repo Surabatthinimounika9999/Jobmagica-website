@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Inbox</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1c2530",
+                        "badge-interview": "rgba(52, 211, 153, 0.15)",
+                        "badge-interview-text": "#34d399",
+                        "badge-rtr": "rgba(167, 139, 250, 0.15)",
+                        "badge-rtr-text": "#a78bfa",
+                        "badge-action": "rgba(251, 146, 60, 0.15)",
+                        "badge-action-text": "#fb923c",
+                        "badge-info": "rgba(96, 165, 250, 0.15)",
+                        "badge-info-text": "#60a5fa",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex flex-col h-screen w-full overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="flex-none pt-4 pb-2 px-4 bg-background-light dark:bg-background-dark z-20">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile avatar showing a smiling professional" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUcuLeJebPfCU4xhEcXC9zCCU08ZLEVQ3nGrOTuQbNGA2Mf4prNW2ODrYexKdQCauIZY8LlnIXIBDgsQncgrrlYIDAYJT98uPksDWGNDUKIz8PSU4FcZtp7OPGtNzh6o2zJfSAlvZYv5JUo_WS7134tyPirhAokE-pspuJNQRPgDf32SFa2mVjXIBkYxZNoH4IcPOvYh3UaD_Ct7gDURSFNgx-YR9Y0neKC1dH8_MPX7RZ2e0adWKZNHDntJo9J_z9BP9CcLGGfnc");'>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Inbox</h1>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">edit_square</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+</div>
+<input class="block w-full p-2.5 pl-10 text-sm rounded-xl bg-slate-100 dark:bg-surface-dark border-none ring-0 focus:ring-2 focus:ring-primary text-slate-900 dark:text-white placeholder-slate-500" placeholder="Search emails..." type="text"/>
+</div>
+</header>
+<!-- Filters / Chips -->
+<div class="flex-none px-4 py-2 overflow-x-auto no-scrollbar border-b border-slate-200 dark:border-slate-800/50">
+<div class="flex gap-2 min-w-max">
+<button class="flex items-center gap-1.5 h-8 px-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-black text-xs font-semibold">
+                    All
+                </button>
+<button class="flex items-center gap-1.5 h-8 px-3 rounded-full bg-slate-200 dark:bg-surface-dark text-slate-600 dark:text-slate-300 text-xs font-medium border border-transparent dark:border-slate-700/50">
+                    Unread
+                    <span class="flex items-center justify-center bg-primary text-white text-[10px] font-bold h-4 w-4 rounded-full">3</span>
+</button>
+<button class="flex items-center gap-1.5 h-8 px-3 rounded-full bg-badge-interview border border-badge-interview-text/20 text-badge-interview-text text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                    Interviews
+                </button>
+<button class="flex items-center gap-1.5 h-8 px-3 rounded-full bg-badge-rtr border border-badge-rtr-text/20 text-badge-rtr-text text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                    RTRs
+                </button>
+</div>
+</div>
+<!-- Main Content - Email List -->
+<main class="flex-1 overflow-y-auto relative pb-20">
+<!-- Email Item 1: Unread, Interview -->
+<div class="relative group active:bg-slate-100 dark:active:bg-surface-dark transition-colors border-b border-slate-100 dark:border-slate-800/50">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full my-1"></div>
+<div class="flex gap-3 p-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 shrink-0 border border-slate-100 dark:border-slate-700" data-alt="Recruiter Sarah Jenkins portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9RaFj1VgVhDH7D3YIG_UfS7dnYDU9njYzqGIJVFbDPUIF2YdZZRcXnm_CoFSsLvOvsdjYwOaaJGoci648MRuxJWIBtQDgjjQonTexELA0xHknbfxSHFzmasqL3AmZlsVLKsTLlo0vhL3mj4WfGhqbgzD8-3mav5OyJIee9VIDqgZP38eY83MeaP-fKAaBCJu_lXtQUVrpBVOzdwvBCJaod_bX0ymsv2hbrA8hXKpbv_36R4EQW5IU06BUAj1cGwgOlzJyv4zgL5w");'>
+<!-- Online Indicator -->
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-white dark:border-background-dark rounded-full translate-x-[-4px] translate-y-[-4px]"></div>
+</div>
+<div class="flex flex-1 flex-col min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white truncate pr-2">Sarah Jenkins <span class="text-xs font-normal text-slate-500">(TechCorp)</span></h3>
+<span class="text-[11px] text-primary font-medium shrink-0 whitespace-nowrap">10m ago</span>
+</div>
+<div class="flex items-center gap-2 mt-1 mb-0.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium uppercase tracking-wider bg-badge-interview text-badge-interview-text">
+<span class="material-symbols-outlined text-[10px]">auto_awesome</span>
+                                Interview Setup
+                            </span>
+</div>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">Scheduling your technical round</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">Hi Alex, we'd like to move forward with your application and schedule the technical round for next...</p>
+</div>
+</div>
+<!-- Context Action -->
+<button class="absolute top-4 right-4 p-1 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<!-- Email Item 2: Unread, RTR -->
+<div class="relative group active:bg-slate-100 dark:active:bg-surface-dark transition-colors border-b border-slate-100 dark:border-slate-800/50">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full my-1"></div>
+<div class="flex gap-3 p-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 shrink-0 border border-slate-100 dark:border-slate-700" data-alt="Recruiter Mike Ross portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsopZ5DVB908F6F494fN8yJLnlUQUBHzBI49xhC49d9os0nS06xVhGQilv0bjaOFRlbLR66GMxSTMpZ5di3i-xS7siFVKJB5eXrUKolDvQr6JmMD6A-GHu4Tsr5KSqIjC9f57RTsfD3r7Eshlj-UcHhPcoNH4ZCn_PdS6DOki2fWrpIuwZonmCWXrANNlaMSDhAQJvFHPucl4UsUUztmww8kr5TdIwn64RmGTQsLdZJ2ffq_VsdGj-H8m_q0Xou72_9v2XTvRvj4Q");'>
+</div>
+<div class="flex flex-1 flex-col min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white truncate pr-2">Mike Ross <span class="text-xs font-normal text-slate-500">(RecruitAgency)</span></h3>
+<span class="text-[11px] text-primary font-medium shrink-0 whitespace-nowrap">1h ago</span>
+</div>
+<div class="flex items-center gap-2 mt-1 mb-0.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium uppercase tracking-wider bg-badge-rtr text-badge-rtr-text">
+<span class="material-symbols-outlined text-[10px]">auto_awesome</span>
+                                RTR
+                            </span>
+</div>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">Action Required: Confirm representation</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">Please reply with your confirmation to be represented by us for the Senior Developer role at...</p>
+</div>
+</div>
+</div>
+<!-- Email Item 3: Unread, Action -->
+<div class="relative group active:bg-slate-100 dark:active:bg-surface-dark transition-colors border-b border-slate-100 dark:border-slate-800/50">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full my-1"></div>
+<div class="flex gap-3 p-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 shrink-0 border border-slate-100 dark:border-slate-700" data-alt="Recruiter Jessica Pearson portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaLHgbrtO-8nWDC1gLLE4RmwaEB3K2j5OEGc1hOuaY2AgMCLW98qV2cTl9677-DF-0MSJsK2V85JJMQkkD9RDYSrZKSzg_KSebjVOGWf5eWzUggC6I_1nT0HZ2-tkFAgoBpxDoAvfUSQFikroGX7hJ7ePf9zEeTYLvmldhhVoCd84JuzMYCA42GMDZxJs77ydL_EKZ9BRoLfSWv5lOw_3DUzQdo3iyYe65pQZeDbrIku_XGnSeGQVNfsKV6RX5nHUVz1CdQExeO4o");'>
+</div>
+<div class="flex flex-1 flex-col min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold text-slate-900 dark:text-white truncate pr-2">Jessica Pearson <span class="text-xs font-normal text-slate-500">(Pearson Hardman)</span></h3>
+<span class="text-[11px] text-primary font-medium shrink-0 whitespace-nowrap">3h ago</span>
+</div>
+<div class="flex items-center gap-2 mt-1 mb-0.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium uppercase tracking-wider bg-badge-action text-badge-action-text">
+<span class="material-symbols-outlined text-[10px]">priority_high</span>
+                                Action Needed
+                            </span>
+</div>
+<p class="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">Updated Offer Letter</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">We have updated the compensation details as discussed. Please review and sign.</p>
+</div>
+</div>
+</div>
+<!-- Email Item 4: Read, Follow-up -->
+<div class="relative group active:bg-slate-100 dark:active:bg-surface-dark transition-colors border-b border-slate-100 dark:border-slate-800/50 opacity-75 hover:opacity-100">
+<div class="flex gap-3 p-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 shrink-0 border border-slate-100 dark:border-slate-700 grayscale-[0.5]" data-alt="Generic company logo for Amazon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrKqv2Uahxqln7UXiM0qNg-e3qsMtshLKqO3wWm24KYvOtTKGk3zPMI98gPTk4aZtDsNMMg7EB5fi9U4_DF4JsT-CSVvO5cXE8cyO68Ba80mkBlfhH_q3GJkJN_NZC1UsWt3iEyn7hDClwBNHobsQiIFrBidxFwwO4ohJAOO2wmYGWYxtR2UZqyhyar0xhmJaoMGhO8UAyGWMhFs70g_ylVZwFz8KR9-m4n9hrmoBOBKk_v3_xDJ1vMi4kQ8Gp4o-qVP881dY2tQI");'>
+</div>
+<div class="flex flex-1 flex-col min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-medium text-slate-700 dark:text-slate-300 truncate pr-2">Amazon Recruiting</h3>
+<span class="text-[11px] text-slate-400 font-normal shrink-0 whitespace-nowrap">Yesterday</span>
+</div>
+<div class="flex items-center gap-2 mt-1 mb-0.5">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium uppercase tracking-wider bg-badge-info text-badge-info-text">
+                                Follow-up
+                            </span>
+</div>
+<p class="text-sm font-normal text-slate-600 dark:text-slate-400 truncate">Just checking in on your application</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 line-clamp-1 mt-0.5">Hi Alex, we wanted to let you know we are still reviewing resumes for the...</p>
+</div>
+</div>
+</div>
+<!-- Email Item 5: Read, General -->
+<div class="relative group active:bg-slate-100 dark:active:bg-surface-dark transition-colors border-b border-slate-100 dark:border-slate-800/50 opacity-75 hover:opacity-100">
+<div class="flex gap-3 p-4">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 shrink-0 border border-slate-100 dark:border-slate-700 grayscale-[0.5]" data-alt="Recruiter David Wallace portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgqEx1m1tt9gL2pD87y69kywcF81YwpG__uMXHK2Y6gQgAv2xIM09g3KSW2UUopGe2TRBxZ574j2-g5UQS7Vg5IjPALpCrpJznLtzWvgUDgNYKLaDuuEBTyUAUdkN14pfVxkkqQVLuNV2cMm3nl76morZHMx7WDiAFrLbrQ-MTVmDVH-ADquKtocrk9B-siVq_hfpCeYWNEU33UMVkIetROIoOpocXZJOdxlSDzb-hTLt4br5UB5bHnivNMQG8Md5BMyQiZIJCQbo");'>
+</div>
+<div class="flex flex-1 flex-col min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-medium text-slate-700 dark:text-slate-300 truncate pr-2">David Wallace <span class="text-xs font-normal text-slate-500">(Dunder Mifflin)</span></h3>
+<span class="text-[11px] text-slate-400 font-normal shrink-0 whitespace-nowrap">2d ago</span>
+</div>
+<p class="text-sm font-normal text-slate-600 dark:text-slate-400 truncate">Thanks for your interest</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 line-clamp-1 mt-0.5">We have received your application and will get back to you shortly.</p>
+</div>
+</div>
+</div>
+<!-- Swipe Action Hint (Visual only) -->
+<div class="flex justify-center mt-6 mb-12">
+<p class="text-xs text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">swipe_left</span>
+                    Swipe left for options
+                </p>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="absolute bottom-24 right-4 h-14 w-14 rounded-2xl bg-primary shadow-lg shadow-primary/40 flex items-center justify-center text-white z-30 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[28px]">edit</span>
+</button>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 left-0 w-full bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-6 z-40">
+<div class="flex justify-between items-center h-16">
+<button class="flex flex-col items-center gap-1 w-12 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-12 text-primary transition-colors relative">
+<div class="absolute -top-1 -right-1 size-2 bg-red-500 rounded-full"></div>
+<span class="material-symbols-outlined fill-current">mail</span>
+<span class="text-[10px] font-medium">Inbox</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-12 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-medium">Jobs</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-12 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+<!-- iOS Safe Area Spacer -->
+<div class="h-4 w-full"></div>
+</nav>
+</div>
+</body></html>

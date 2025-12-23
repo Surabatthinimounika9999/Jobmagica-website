@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica - Role Permissions</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1973f0",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "card-light": "#ffffff",
+              "card-dark": "#1C2632",
+              "text-secondary-light": "#64748b",
+              "text-secondary-dark": "#94a3b8",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner mobile look if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-6">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-light dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+<button class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white" style="font-size: 24px;">menu</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Role Permissions</h1>
+<button class="flex h-10 items-center justify-end px-2">
+<span class="text-primary text-base font-semibold leading-normal tracking-wide">Save</span>
+</button>
+</header>
+<!-- Role Selector (Segmented Buttons) -->
+<div class="px-4 py-4">
+<div class="flex h-12 w-full items-center justify-center rounded-xl bg-slate-200 dark:bg-card-dark p-1">
+<!-- Job Seeker Tab -->
+<label class="group flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm transition-all duration-200">
+<span class="truncate text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark group-has-[:checked]:text-slate-900 dark:group-has-[:checked]:text-white">Job Seeker</span>
+<input class="hidden" name="role-selector" type="radio" value="Job Seeker"/>
+</label>
+<!-- Recruiter Tab -->
+<label class="group flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm transition-all duration-200">
+<span class="truncate text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark group-has-[:checked]:text-slate-900 dark:group-has-[:checked]:text-white">Recruiter</span>
+<input checked="" class="hidden" name="role-selector" type="radio" value="Recruiter"/>
+</label>
+<!-- Admin Tab -->
+<label class="group flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm transition-all duration-200">
+<span class="truncate text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark group-has-[:checked]:text-slate-900 dark:group-has-[:checked]:text-white">Admin</span>
+<input class="hidden" name="role-selector" type="radio" value="Admin"/>
+</label>
+</div>
+</div>
+<!-- Section: Global Security Policies -->
+<div class="flex flex-col gap-2 px-4 mt-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-1 mb-2">Global Security Policies</h3>
+<div class="flex flex-col gap-1 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm border border-slate-100 dark:border-slate-800">
+<!-- Item: 2FA -->
+<div class="flex items-center gap-4 p-4 border-b border-slate-100 dark:border-slate-700/50 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-slate-700 shrink-0 h-10 w-10 text-primary dark:text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">shield_lock</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Enforce 2FA</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal">Require for all logins</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+<!-- Item: Strong Passwords -->
+<div class="flex items-center gap-4 p-4 border-b border-slate-100 dark:border-slate-700/50 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-slate-700 shrink-0 h-10 w-10 text-primary dark:text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">password</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Strong Passwords</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal">Min 12 chars, alphanumeric</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+<!-- Item: Session Timeout -->
+<div class="flex items-center gap-4 p-4 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-slate-700 shrink-0 h-10 w-10 text-primary dark:text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">timer</span>
+</div>
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Auto-Logout</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal">After 15 min inactivity</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Specific Permissions (Recruiter Context) -->
+<div class="flex flex-col gap-2 px-4 mt-6">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-1 mb-2">Recruitment Features</h3>
+<div class="flex flex-col gap-1 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm border border-slate-100 dark:border-slate-800">
+<!-- Group Header -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-b border-slate-100 dark:border-slate-700/50">
+<span class="text-xs font-bold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark">Job Management</span>
+</div>
+<!-- Item: Post Jobs -->
+<div class="flex items-center gap-4 p-4 border-b border-slate-100 dark:border-slate-700/50 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Post New Jobs</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+<!-- Item: Edit Jobs -->
+<div class="flex items-center gap-4 p-4 border-b border-slate-100 dark:border-slate-700/50 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Edit Active Listings</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+<!-- Group Header -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-4 py-2 border-y border-slate-100 dark:border-slate-700/50">
+<span class="text-xs font-bold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark">Candidate Data</span>
+</div>
+<!-- Item: AI Scores -->
+<div class="flex items-center gap-4 p-4 border-b border-slate-100 dark:border-slate-700/50 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">View AI Scores</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal">Access predictive analytics</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+<!-- Item: Contact Info -->
+<div class="flex items-center gap-4 p-4 last:border-0">
+<div class="flex items-center gap-4 flex-1">
+<div class="flex flex-col">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">View Contact Info</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-xs font-normal">Email and phone numbers</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border border-transparent bg-slate-200 dark:bg-slate-700 transition-colors duration-200 has-[:checked]:bg-primary">
+<input class="peer sr-only" type="checkbox"/>
+<span class="absolute left-0.5 h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-transform duration-200 peer-checked:translate-x-5"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Danger Zone -->
+<div class="flex flex-col gap-2 px-4 mt-6 mb-8">
+<h3 class="text-red-500 text-sm font-bold uppercase tracking-wider px-1 mb-2">Danger Zone</h3>
+<div class="rounded-xl bg-card-light dark:bg-card-dark border border-red-200 dark:border-red-900/30 overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 text-left group active:bg-red-50 dark:active:bg-red-900/10">
+<div class="flex flex-col">
+<span class="text-red-600 dark:text-red-400 font-medium">Reset All Permissions</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Revert Recruiter role to defaults</span>
+</div>
+<span class="material-symbols-outlined text-red-600 dark:text-red-400 group-active:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

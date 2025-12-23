@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica Onboarding</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner mobile view */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Selection logic simulation with CSS only for demo purposes (using peer/checked patterns if this was a form, but here just styling focused on the request) */
+        .role-radio:checked + .role-card {
+            border-color: #1973f0;
+            background-color: rgba(25, 115, 240, 0.1);
+        }
+        .role-radio:checked + .role-card .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased overflow-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col max-w-md mx-auto shadow-2xl overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Header Section -->
+<div class="flex-none pt-12 pb-4 px-6 flex flex-col items-center text-center z-10">
+<!-- Logo Placeholder -->
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">auto_awesome</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tight mb-3 text-slate-900 dark:text-white">
+                Welcome to JobMagica
+            </h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-relaxed max-w-xs">
+                Your AI-powered career assistant. How do you plan to use JobMagica?
+            </p>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-5 py-2">
+<div class="flex flex-col gap-4 mt-2">
+<!-- Role Option 1: Job Seeker -->
+<label class="relative cursor-pointer group">
+<input checked="" class="role-radio peer sr-only" name="role" type="radio"/>
+<div class="role-card relative flex items-center gap-4 p-4 rounded-xl border-2 border-transparent bg-white dark:bg-[#1b2027] shadow-sm hover:bg-slate-50 dark:hover:bg-[#222831] transition-all duration-200">
+<!-- Icon Box -->
+<div class="flex-none w-14 h-14 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-2xl">person_search</span>
+</div>
+<!-- Text Content -->
+<div class="flex-1 flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Job Seeker</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug">
+                                Build your AI resume and apply with one click.
+                            </p>
+</div>
+<!-- Check Icon (Visible when checked) -->
+<div class="check-icon absolute top-4 right-4 w-6 h-6 rounded-full bg-primary flex items-center justify-center opacity-0 scale-75 transition-all duration-200">
+<span class="material-symbols-outlined text-white text-sm font-bold">check</span>
+</div>
+</div>
+</label>
+<!-- Role Option 2: Recruiter -->
+<label class="relative cursor-pointer group">
+<input class="role-radio peer sr-only" name="role" type="radio"/>
+<div class="role-card relative flex items-center gap-4 p-4 rounded-xl border-2 border-transparent bg-white dark:bg-[#1b2027] shadow-sm hover:bg-slate-50 dark:hover:bg-[#222831] transition-all duration-200">
+<!-- Icon Box -->
+<div class="flex-none w-14 h-14 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-600 dark:text-purple-400 text-2xl">domain_verification</span>
+</div>
+<!-- Text Content -->
+<div class="flex-1 flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Recruiter</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-snug">
+                                Automate screening and find candidates instantly.
+                            </p>
+</div>
+<!-- Check Icon (Visible when checked) -->
+<div class="check-icon absolute top-4 right-4 w-6 h-6 rounded-full bg-primary flex items-center justify-center opacity-0 scale-75 transition-all duration-200">
+<span class="material-symbols-outlined text-white text-sm font-bold">check</span>
+</div>
+</div>
+</label>
+<!-- Visual Element / Decorative Image -->
+<div class="mt-6 w-full h-32 rounded-xl overflow-hidden relative opacity-80">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 mix-blend-overlay z-10"></div>
+<img alt="Abstract digital network connections representing AI workflows" class="w-full h-full object-cover grayscale opacity-50" data-alt="Abstract digital network connections representing AI workflows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgtUfd-hnRJgHLR0SMLyDR7jgFQIxCiNNfxlFlNLzJTwjq9Hh_awEaR8cSThCV8zmlGUmzov8JY8jEIZJ1N9r30CMph7g3cmqaoNucxmVImrzya2XmG5JHebYu2HQt2ksLU9X7x29AIUVE55Oqr4R6eqToKacGzXPefOsQHFdakburH82cHe1i6xY4U6xSLjCeCbDhijPgVHWLiv467549XFYWyAv5_YY3GhHIAE4asZMzLWaeeDHLaGh5XO2GMTIDIJwBDx9wLVs"/>
+</div>
+</div>
+</div>
+<!-- Fixed Footer Actions -->
+<div class="flex-none p-6 pt-2 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent">
+<button class="w-full bg-primary hover:bg-blue-600 active:scale-[0.98] transition-transform text-white font-bold text-base py-3.5 px-6 rounded-lg shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2">
+                Continue
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+<div class="mt-4 text-center">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                    Already have an account? 
+                    <a class="text-primary font-medium hover:text-blue-400 ml-1" href="#">Log in</a>
+</p>
+</div>
+<!-- Safe Area Spacer for iOS Home Indicator -->
+<div class="h-4"></div>
+</div>
+</div>
+</body></html>

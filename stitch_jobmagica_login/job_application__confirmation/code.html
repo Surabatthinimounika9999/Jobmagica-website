@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica - Application Confirmation</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center font-display antialiased transition-colors duration-200">
+<!-- Mobile Container (Simulating Phone Viewport Behavior) -->
+<div class="relative w-full max-w-md h-screen flex flex-col bg-background-light dark:bg-background-dark overflow-hidden shadow-2xl mx-auto sm:border-x sm:border-slate-200 dark:sm:border-slate-800">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-4 py-4 bg-background-light dark:bg-background-dark z-20">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">smart_toy</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">JobMagica</h2>
+</div>
+<button class="relative w-9 h-9 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 focus:outline-none">
+<div class="w-full h-full bg-center bg-cover" data-alt="User profile avatar gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjYduMAw1gtbOSwuYg7D-6DTMwjAGntJkFbtlupxncQ19EePfnQ9dYMtFOmFrW2a0nroK-_FdtqQ3Hl_FgClWtXNC5YzAOAttRLdiWZB4uGECq6pMEiLXD5OqI2ph5qnrEZSU1fk2EivQmemCqYYwcJWHfBnTR6ePI8fvkrUYMwgzPLnCXgDRUYGAr0GwCzUBO0Gy93DPBJh-wpvzV6wG8EqOoBUMYym6-FkbOGVvckfgDK63VqGI62raPdjWf-EsrNq2JYsAinG4");'></div>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-5 pb-24 pt-4 flex flex-col">
+<!-- Success Status Section -->
+<div class="flex flex-col items-center text-center mt-6 mb-10 animate-fade-in-up">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150"></div>
+<div class="relative w-24 h-24 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white" style="font-size: 48px; font-variation-settings: 'wght' 600;">check</span>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight mb-3">
+                    Application Sent Successfully!
+                </h1>
+<p class="text-slate-500 dark:text-[#9ca8ba] text-base font-normal leading-relaxed max-w-[280px]">
+                    Good luck! Your profile has been shared with TechCorp. We've sent a confirmation email to your inbox.
+                </p>
+</div>
+<!-- Job Summary Card -->
+<div class="w-full mb-8">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-[#1b2027] p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="w-16 h-16 shrink-0 bg-center bg-no-repeat bg-cover rounded-lg border border-slate-100 dark:border-slate-700" data-alt="TechCorp company logo placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG9qIttBATFPxggODdmBNx4OdApq7AO3EaYt5L6_aEK4OxNKDp1fyeLzeCxV7aVhYy3ZaYtJjJPta-iCbHySNJny9VXjy8y744p3FMls97U8H1-zfVD4dx-iOvkWxPyVi6iK1-ezDhNZMpE_qMhPDE0mGYY13HEMqyG5gBiLhrBMOEfAi7Cst3SE2bw16MqtbkTQ6XizV_X21g-d44RQgrivBiqjbwGcRrrkbOgjOPot8K92hCKYIVo1sYLD8SKQU-wMafgYNrzg0");'>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight truncate">Senior Product Designer</p>
+<p class="text-slate-500 dark:text-[#9ca8ba] text-sm font-normal leading-normal truncate">TechCorp • San Francisco, CA</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                Applied
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Insight Toast -->
+<div class="mb-8 p-3 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 flex items-start gap-3">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 mt-0.5" style="font-size: 20px;">auto_awesome</span>
+<div class="flex-1">
+<p class="text-sm font-medium text-indigo-900 dark:text-indigo-200">JobMagica AI Tip</p>
+<p class="text-xs text-indigo-700 dark:text-indigo-300 mt-0.5">Candidates with updated skill tags are 30% more likely to get an interview.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-3 mt-auto">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/25">
+                    View My Applications
+                </button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-transparent border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-[0.98] transition-all text-slate-700 dark:text-white text-base font-bold leading-normal">
+                    Return to Dashboard
+                </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="absolute bottom-0 left-0 w-full bg-white dark:bg-[#1b2027] border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-2 z-30">
+<div class="flex justify-around items-end h-16 pb-2">
+<!-- Nav Item: Home -->
+<button class="flex flex-col items-center justify-center w-full gap-1 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" style="font-size: 24px;">dashboard</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Home</span>
+</button>
+<!-- Nav Item: Jobs (Active) -->
+<button class="flex flex-col items-center justify-center w-full gap-1 group">
+<span class="material-symbols-outlined text-primary fill-current transition-colors" style="font-size: 24px; font-variation-settings: 'FILL' 1;">work</span>
+<span class="text-[10px] font-medium text-primary">Jobs</span>
+</button>
+<!-- Nav Item: Chat -->
+<button class="flex flex-col items-center justify-center w-full gap-1 group relative">
+<span class="absolute top-0 right-7 w-2 h-2 rounded-full bg-red-500"></span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" style="font-size: 24px;">chat_bubble</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Chat</span>
+</button>
+<!-- Nav Item: Profile -->
+<button class="flex flex-col items-center justify-center w-full gap-1 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors" style="font-size: 24px;">person</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">Profile</span>
+</button>
+</div>
+</nav>
+<!-- Safe Area Spacer for iPhone Home Bar -->
+<div class="h-1 bg-white dark:bg-[#1b2027]"></div>
+</div>
+</body></html>

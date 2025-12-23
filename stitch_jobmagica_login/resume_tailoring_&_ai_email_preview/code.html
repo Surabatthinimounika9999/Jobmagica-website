@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume Tailoring &amp; AI Email Preview</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white font-display overflow-hidden h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-[#29303b] shrink-0 z-10">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-[#29303b] transition-colors">
+<span class="material-symbols-outlined text-[#111418] dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Review Application</h2>
+<div class="w-10"></div> <!-- Spacer to center title -->
+</header>
+<!-- Main Content (Scrollable) -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-32">
+<!-- Job Header -->
+<section class="px-4 pt-6 pb-2">
+<h1 class="text-[28px] font-bold leading-tight mb-1">Senior UX Designer</h1>
+<p class="text-[#637588] dark:text-[#9ca8ba] text-base font-normal">TechFlow Inc.</p>
+</section>
+<!-- Match Score -->
+<section class="px-4 py-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">psychology</span>
+<p class="font-medium text-base">AI Match Score</p>
+</div>
+<span class="text-primary font-bold">94%</span>
+</div>
+<div class="h-2 w-full bg-gray-200 dark:bg-[#3b4554] rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 94%;"></div>
+</div>
+<p class="text-[#637588] dark:text-[#9ca8ba] text-sm mt-2">High Match based on job description</p>
+</section>
+<!-- Resume Preview Card -->
+<section class="px-4 py-2">
+<div class="bg-white dark:bg-[#1b2027] rounded-xl p-4 shadow-sm border border-gray-200 dark:border-transparent flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<!-- Resume Thumbnail -->
+<div class="w-20 h-24 shrink-0 rounded-lg bg-gray-200 dark:bg-[#29303b] bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Minimalist resume document preview thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNNsAJRtaUrgXwODNsnmV8IyDUvloh5T7m7u1zc-41APMLkjv5w1WyuLRhu_Xgbm_-G5k6M57cewTF7QZ9fV4jT7OeCT8mXpOL6Wl4xQG9qBywv7-0gv_oN6xn0b7mMBJYUCaur0QZuCf0Ac6uEjITRMB_CNIZrbmUgyPoyvYJvPPV664lwPAmXGGIYQal4ljo-SXeUiJhu_6M6WzVzFif8vnPsG6kSDh4xpJLlwhhZgoya_4cTDc1tee0QlOi5NciBJTL78hvTgI");'>
+</div>
+<div class="flex-1 flex flex-col justify-between h-24 py-1">
+<div>
+<h3 class="font-bold text-lg leading-tight mb-1">Tailored Resume</h3>
+<p class="text-[#637588] dark:text-[#9ca8ba] text-sm">resume_v2_techflow.pdf</p>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+<span class="text-xs font-medium text-green-600 dark:text-green-400">AI Optimized</span>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 h-10 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg font-medium text-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                    View PDF
+                </button>
+</div>
+</section>
+<!-- Email Editor Section -->
+<section class="px-4 py-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-bold text-lg">AI Cover Email</h3>
+<button class="text-xs font-medium text-primary hover:text-primary/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+                    Regenerate
+                </button>
+</div>
+<div class="bg-white dark:bg-[#1b2027] rounded-xl p-4 shadow-sm border border-gray-200 dark:border-transparent flex flex-col gap-4">
+<!-- Subject Line -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-[#637588] dark:text-[#9ca8ba] uppercase tracking-wider">Subject</label>
+<input class="w-full bg-gray-50 dark:bg-[#101822] text-[#111418] dark:text-white rounded-lg px-3 py-2.5 text-sm border border-gray-200 dark:border-[#29303b] focus:outline-none focus:ring-2 focus:ring-primary/50 placeholder-gray-400" type="text" value="Application for Senior UX Designer - Alex Doe"/>
+</div>
+<!-- Email Body -->
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-medium text-[#637588] dark:text-[#9ca8ba] uppercase tracking-wider">Message</label>
+<textarea class="w-full h-48 bg-gray-50 dark:bg-[#101822] text-[#111418] dark:text-white rounded-lg px-3 py-2.5 text-sm border border-gray-200 dark:border-[#29303b] focus:outline-none focus:ring-2 focus:ring-primary/50 placeholder-gray-400 leading-relaxed resize-none">Dear Hiring Manager,
+
+I am writing to express my strong interest in the Senior UX Designer position at TechFlow Inc. With over 5 years of experience designing user-centric interfaces and leading product design teams, I believe my background aligns perfectly with your team's innovative approach.
+
+My recent work involves leveraging AI to streamline user workflows, which resulted in a 30% increase in user retention. I have attached my tailored resume for your review.
+
+Thank you for your time and consideration.
+
+Best regards,
+Alex Doe</textarea>
+</div>
+</div>
+</section>
+<div class="h-8"></div> <!-- Spacer for bottom safety -->
+</main>
+<!-- Sticky Footer Actions & Nav -->
+<div class="bg-background-light dark:bg-background-dark shrink-0 z-20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] dark:shadow-[0_-1px_0_0_rgba(255,255,255,0.1)]">
+<!-- Send Action Area -->
+<div class="px-4 py-3 border-b border-gray-200 dark:border-[#29303b]">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white rounded-xl h-12 font-bold text-base shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">send</span>
+                Send Application
+            </button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="flex justify-around items-center px-2 py-2 pb-5 sm:pb-2">
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-[#637588] dark:text-[#9ca8ba] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-[#637588] dark:text-[#9ca8ba] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-medium">Jobs</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-primary" href="#">
+<span class="material-symbols-outlined fill-1">assignment</span>
+<span class="text-[10px] font-medium">Review</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 min-w-[64px] text-[#637588] dark:text-[#9ca8ba] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Email Detail with AI Reply</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;scrollbar-width: none;}
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased overflow-hidden selection:bg-primary/30">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark border-x dark:border-slate-800 border-slate-200">
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark z-20 border-b border-slate-200 dark:border-slate-800 shrink-0">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-base font-bold leading-tight">Sarah Jenkins</h2>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Frontend Dev Candidate</span>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto overscroll-contain pb-32">
+<div class="px-5 pt-6 pb-2">
+<div class="flex items-start justify-between gap-4">
+<h1 class="text-2xl font-bold leading-tight tracking-tight dark:text-white text-slate-900">Re: Interview Availability</h1>
+<span class="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 mt-1 whitespace-nowrap">
+                        Inbox
+                    </span>
+</div>
+<div class="mt-2 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[18px]">label_important</span>
+<span>High Priority</span>
+</div>
+</div>
+<div class="px-5 py-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-800 py-2 text-sm font-medium text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">
+<span class="text-xs">2 previous messages</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="px-5">
+<div class="flex gap-4 mb-4">
+<div class="relative shrink-0">
+<div class="h-12 w-12 rounded-full bg-cover bg-center ring-2 ring-slate-100 dark:ring-slate-800" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFa3OmdYX0bMNbsdrlCAHMr1MmfLFnWWh2y7TyqVJoXrg85Sve74wesP98xE9SGpx8rhkmu_8Cu_254rc0L2uZkg0WKFhc3myHqkWIQJV0mblEy883Ia-ei0p1s-yfGbxUEeleAhe-mibcrecgQ-X9TdqoTWEzqmQX1sReXeULPV92f-PT8YpLvB70xOGXp4PdLFK0N2gNCvgp3hep-I4rXNE4K69R0Z8JETd6_Mbv1SfG4vn1Vr4lDPd9SQJByRgEIcd7ZK2-8FU");'></div>
+<div class="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-primary">mail</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex items-baseline justify-between">
+<p class="truncate text-base font-semibold text-slate-900 dark:text-white">Sarah Jenkins</p>
+<span class="text-xs text-slate-500 whitespace-nowrap">10:30 AM</span>
+</div>
+<p class="truncate text-sm text-slate-500 dark:text-slate-400">to me, hr@jobmagica.com</p>
+</div>
+</div>
+<div class="prose prose-sm dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+<p>Hi team,</p>
+<p>Thanks for reaching out so quickly. I'm excited about the opportunity to join JobMagica.</p>
+<p>I am available for an interview this <strong>Tuesday at 10 AM</strong> or <strong>Thursday at 2 PM</strong>. Let me know what works best for the engineering team.</p>
+<p>I've attached my updated portfolio below for your reference before the call.</p>
+<p>Best,<br/>Sarah</p>
+</div>
+<div class="mt-6 flex flex-wrap gap-3">
+<div class="flex items-center gap-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 p-3 pr-4 border border-transparent hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 group-hover:bg-red-200 dark:group-hover:bg-red-900/50 transition-colors">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Portfolio_v2.pdf</span>
+<span class="text-xs text-slate-500">2.4 MB</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-6"></div>
+</main>
+<div class="absolute bottom-[80px] left-0 right-0 px-4 z-10 w-full max-w-md mx-auto">
+<div class="relative overflow-hidden rounded-2xl border border-primary/20 bg-background-light dark:bg-[#1A222C] shadow-2xl backdrop-blur-xl transition-all duration-300">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-primary opacity-70"></div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary animate-pulse" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">AI Draft Suggestion</span>
+</div>
+<div class="flex gap-2">
+<button class="p-1 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+</button>
+<button class="p-1 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-3 overflow-x-auto no-scrollbar -mx-4 px-4 pb-1">
+<button class="flex shrink-0 items-center gap-1.5 pl-2.5 pr-2 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-purple-500" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+        Friendly
+        <span class="material-symbols-outlined text-[16px] text-slate-400">expand_more</span>
+</button>
+<button class="flex shrink-0 items-center gap-1.5 pl-2.5 pr-2 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-blue-500">short_text</span>
+        Concise
+        <span class="material-symbols-outlined text-[16px] text-slate-400">expand_more</span>
+</button>
+<button class="flex shrink-0 items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 text-xs font-medium text-primary dark:text-blue-400 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors ml-auto">
+<span class="material-symbols-outlined text-[16px] animate-spin-slow">refresh</span>
+        Rewrite
+    </button>
+</div>
+<div class="rounded-lg bg-slate-50 dark:bg-slate-900/50 p-3 mb-4 border border-slate-200 dark:border-slate-700/50">
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Hi Sarah, <br/>
+                            Thanks for getting back to us. <span class="bg-primary/20 text-primary dark:text-blue-300 px-1 rounded">Tuesday at 10 AM</span> works perfectly for the team. I've sent a calendar invite to confirm. Talk soon!
+                        </p>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 flex items-center justify-center gap-2 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white h-11 text-sm font-semibold hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                            Edit
+                        </button>
+<button class="flex-[2] flex items-center justify-center gap-2 rounded-xl bg-primary text-white h-11 text-sm font-bold shadow-lg shadow-primary/25 hover:bg-blue-600 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                            Approve &amp; Send
+                        </button>
+</div>
+</div>
+</div>
+<div class="mt-3 flex justify-around px-4 pb-2 opacity-0 h-0 pointer-events-none">
+</div>
+</div>
+<nav class="shrink-0 h-[80px] bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 flex items-start justify-around pt-3 pb-6 px-2 z-20">
+<button class="flex flex-col items-center gap-1 w-16 group">
+<div class="relative">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
+</div>
+<span class="text-[10px] font-medium text-primary">Inbox</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">work</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 group-hover:text-primary">Jobs</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<div class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-white -mt-5 shadow-lg shadow-primary/30 border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined">add</span>
+</div>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">group</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 group-hover:text-primary">People</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 group-hover:text-primary">Profile</span>
+</button>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JobMagica - Manual Application</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1973f0",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-dark": "#1b232d",
+                        "surface-light": "#ffffff",
+                        "border-dark": "#2a3441",
+                        "border-light": "#e5e7eb",
+                        "text-secondary-dark": "#9ca8ba",
+                        "text-secondary-light": "#6b7280",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary/30">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-40 flex items-center justify-between border-b border-border-light dark:border-border-dark bg-surface-light/90 dark:bg-background-dark/90 px-4 py-3 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-transform text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Manual Application</h1>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col gap-6 p-4">
+<!-- AI Autofill Banner -->
+<div class="flex items-center justify-between rounded-xl bg-primary/10 p-4 border border-primary/20">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Autofill with AI</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Use your profile data to fill this form</p>
+</div>
+</div>
+<button class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-blue-600 transition-colors">
+                    Apply
+                </button>
+</div>
+<!-- Job Source Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-lg font-bold leading-tight tracking-tight px-1">Job Details</h2>
+<!-- Segmented Control -->
+<div class="flex w-full p-1 rounded-xl bg-gray-200 dark:bg-surface-dark border border-border-light dark:border-border-dark">
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="job_source" type="radio"/>
+<div class="flex h-9 w-full items-center justify-center rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark peer-checked:bg-white dark:peer-checked:bg-background-dark peer-checked:text-slate-900 dark:peer-checked:text-white peer-checked:shadow-sm transition-all">
+                            Paste URL
+                        </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="job_source" type="radio"/>
+<div class="flex h-9 w-full items-center justify-center rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark peer-checked:bg-white dark:peer-checked:bg-background-dark peer-checked:text-slate-900 dark:peer-checked:text-white peer-checked:shadow-sm transition-all">
+                            Description
+                        </div>
+</label>
+</div>
+<!-- Text Area Input -->
+<div class="relative">
+<label class="mb-2 block text-sm font-medium text-slate-900 dark:text-white">Job Description</label>
+<textarea class="w-full resize-y rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-4 text-base text-slate-900 dark:text-white placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:border-primary focus:ring-1 focus:ring-primary min-h-[140px]" placeholder="Paste the full job description here so our AI can tailor your application..."></textarea>
+<div class="absolute bottom-3 right-3 text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium bg-surface-light dark:bg-surface-dark px-2 rounded">0/5000</div>
+</div>
+</section>
+<div class="h-px w-full bg-border-light dark:bg-border-dark"></div>
+<!-- Personal Info Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-lg font-bold leading-tight tracking-tight px-1">Personal Info</h2>
+<!-- Name Field -->
+<div>
+<label class="mb-2 block text-sm font-medium text-slate-900 dark:text-white">Full Name</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-[20px]">person</span>
+</div>
+<input class="block w-full rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-3 pl-10 text-base text-slate-900 dark:text-white placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:border-primary focus:ring-1 focus:ring-primary" placeholder="e.g. Jane Doe" type="text" value="Alex Morgan"/>
+</div>
+</div>
+<!-- Email Field -->
+<div>
+<label class="mb-2 block text-sm font-medium text-slate-900 dark:text-white">Email Address</label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-[20px]">mail</span>
+</div>
+<input class="block w-full rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-3 pl-10 text-base text-slate-900 dark:text-white placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:border-primary focus:ring-1 focus:ring-primary" placeholder="e.g. jane@company.com" type="email" value="alex.morgan@example.com"/>
+</div>
+</div>
+<!-- LinkedIn Field -->
+<div>
+<label class="mb-2 block text-sm font-medium text-slate-900 dark:text-white">LinkedIn URL <span class="text-text-secondary-light dark:text-text-secondary-dark font-normal">(Optional)</span></label>
+<div class="relative">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-[20px]">link</span>
+</div>
+<input class="block w-full rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-3 pl-10 text-base text-slate-900 dark:text-white placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:border-primary focus:ring-1 focus:ring-primary" placeholder="https://linkedin.com/in/..." type="url"/>
+</div>
+</div>
+</section>
+<div class="h-px w-full bg-border-light dark:bg-border-dark"></div>
+<!-- Documents Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<h2 class="text-lg font-bold leading-tight tracking-tight">Documents</h2>
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">Required</span>
+</div>
+<!-- Resume Upload -->
+<div class="group relative flex w-full cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-6 transition-colors hover:border-primary hover:bg-primary/5">
+<div class="flex size-12 items-center justify-center rounded-full bg-background-light dark:bg-background-dark mb-3 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-[24px]">cloud_upload</span>
+</div>
+<p class="mb-1 text-sm font-bold text-slate-900 dark:text-white">Upload Resume</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark text-center">PDF, DOCX up to 5MB</p>
+<input class="absolute inset-0 h-full w-full cursor-pointer opacity-0" type="file"/>
+</div>
+<!-- Attached File Preview (Simulated State) -->
+<div class="flex items-center justify-between rounded-lg border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-3">
+<div class="flex items-center gap-3 overflow-hidden">
+<div class="flex size-10 shrink-0 items-center justify-center rounded bg-red-500/10 text-red-500">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<p class="truncate text-sm font-medium text-slate-900 dark:text-white">Alex_Morgan_Resume_2023.pdf</p>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark">2.4 MB • Uploaded just now</p>
+</div>
+</div>
+<button class="flex size-8 shrink-0 items-center justify-center rounded-full text-text-secondary-light hover:bg-black/5 dark:text-text-secondary-dark dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</section>
+<!-- Cover Letter Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-lg font-bold leading-tight tracking-tight px-1">Pitch</h2>
+<div>
+<label class="mb-2 block text-sm font-medium text-slate-900 dark:text-white">Cover Letter <span class="text-text-secondary-light dark:text-text-secondary-dark font-normal">(Optional)</span></label>
+<textarea class="w-full resize-none rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-4 text-base text-slate-900 dark:text-white placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:border-primary focus:ring-1 focus:ring-primary min-h-[120px]" placeholder="Why are you a good fit for this role?"></textarea>
+</div>
+</section>
+<div class="h-8"></div> <!-- Spacer for scrolling -->
+</main>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 z-50 w-full border-t border-border-light dark:border-border-dark bg-surface-light/95 dark:bg-background-dark/95 p-4 backdrop-blur-md pb-8 safe-area-bottom">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-base font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[0.98] transition-all hover:bg-blue-600">
+<span>Submit Application</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Mobile Navigation Drawer (Hidden by default, simulated structure) -->
+<div class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity opacity-0 pointer-events-none">
+<div class="absolute left-0 top-0 h-full w-[85%] max-w-xs bg-background-dark p-6 shadow-2xl transition-transform -translate-x-full">
+<!-- User Profile Summary -->
+<div class="mb-8 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600" data-alt="User Avatar Gradient"></div>
+<div>
+<p class="text-lg font-bold text-white">Alex Morgan</p>
+<p class="text-sm text-gray-400">Pro Member</p>
+</div>
+</div>
+<!-- Nav Links -->
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-4 rounded-lg px-4 py-3 text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 rounded-lg px-4 py-3 text-white bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-medium">My Applications</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 rounded-lg px-4 py-3 text-white hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-medium">Find Jobs</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</body></html>
